@@ -1,0 +1,13 @@
+[[main]]
+name = "blog"
+pageRef = "posts"
+weight = 1
+
+[[main]]
+pre = "github"
+url = "https://github.com/chili-chip"
+weight = 2
+
+
+[[footer]]
+none = "none"

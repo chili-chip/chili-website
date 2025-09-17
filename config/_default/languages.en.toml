@@ -1,0 +1,16 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "chilichip"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+description = "Chilichip is an indie consumer electronics company creating bold, innovative devices with a playful edge."
+dateFormat = "2 January 2006"
+
+["params.author"]
+name = "chilichip"
+bio = "A generally awesome company"
+headline = "spicy electronics"
