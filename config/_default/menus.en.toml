@@ -1,13 +1,22 @@
 [[main]]
+name = "docs"
+pageRef = "docs"
+weight = 1
+
+[[main]]
+name = "vgc-zero"
+pageRef = "docs/vgc-zero"
+parent = "docs"
+
+[[main]]
 name = "blog"
 pageRef = "posts"
-weight = 1
+weight = 2
 
 [[main]]
 pre = "github"
 url = "https://github.com/chili-chip"
-weight = 2
-
+weight = 999
 
 [[footer]]
 none = "none"

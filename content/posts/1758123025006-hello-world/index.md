@@ -3,7 +3,7 @@ title: "hello-world"
 date: 2025-09-17
 draft: false
 description: "Hello world!"
-tags: ["example", "tag"]
+tags: ["hello"]
 ---
 # Hello world from Chilichip!
 
