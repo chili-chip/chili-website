@@ -110,7 +110,7 @@ dist
 public/
 
 # Hugo resources (fingerprinted images, minified assets, etc.)
-resources/_gen/
+resources/
 
 # Lock/stat files created during build
 .hugo_build.lock

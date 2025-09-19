@@ -9,12 +9,14 @@ isoCode = "en"
 rtl = false
 description = "Chilichip is an indie consumer electronics company creating bold, innovative devices with a playful edge."
 dateFormat = "2 January 2006"
+logo = "logo.png"
 
 ["params.author"]
 name = "chilichip"
 bio = "A generally awesome company"
 headline = "spicy electronics"
-links = [
-    { github = "https://github.com/chili-chip" },
-    { discord = "https://discord.gg/xB9sPYKBZc" },
-]
+image = "logo.png"
+
+[["params.author".links]]
+github = "https://github.com/chili-chip"
+discord = "https://discord.gg/xB9sPYKBZc"
