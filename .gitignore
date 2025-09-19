@@ -102,3 +102,41 @@ dist
 
 # TernJS port file
 .tern-port
+
+# -------------------------------------------------
+# Hugo static site generator build artifacts
+# -------------------------------------------------
+# Primary Hugo output directory
+public/
+
+# Hugo resources (fingerprinted images, minified assets, etc.)
+resources/_gen/
+
+# Lock/stat files created during build
+.hugo_build.lock
+hugo_stats.json
+
+# Root-level generated artifacts (leave real content in /content)
+# If you keep a handcrafted custom 404 or index, move it under /content
+index.html
+index.json
+index.xml
+sitemap.xml
+robots.txt
+site.webmanifest
+404.html
+
+# Hashed / aggregated asset folders produced by theme/build
+css/
+js/
+lib/
+img/
+
+# Auto-generated taxonomy section pages (will be rebuilt)
+authors/
+categories/
+tags/
+series/
+
+# Ignore macOS metadata (if not already globally ignored)
+.DS_Store
