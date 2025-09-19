@@ -14,9 +14,21 @@ pageRef = "posts"
 weight = 2
 
 [[main]]
+identifier = "github"
 pre = "github"
 url = "https://github.com/chili-chip"
-weight = 999
+weight = 3
+
+[[main]]
+identifier = "discord"
+pre = "discord"
+url = "https://discord.gg/xB9sPYKBZc"
+weight = 4
 
 [[footer]]
 none = "none"
+
+[[footer]]
+name = "tags"
+pageRef = "tags"
+weight = 1

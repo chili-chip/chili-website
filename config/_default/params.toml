@@ -8,21 +8,21 @@ fathomAnalytics = { }
 verification = { }
 
 [header]
-layout = "basic"
+layout = "fixed-fill-blur"
 
 [footer]
 showCopyright = true
-showThemeAttribution = true
+showThemeAttribution = false
 showAppearanceSwitcher = true
 showScrollToTop = true
 
 [homepage]
 layout = "background"
-showRecent = false
-showRecentItems = 5
-showMoreLink = false
+showRecent = true
+showRecentItems = 3
+showMoreLink = true
 showMoreLinkDest = "/posts"
-cardView = false
+cardView = true
 cardViewScreenWidth = false
 layoutBackgroundBlur = false
 
@@ -62,7 +62,7 @@ showSummary = true
 showTableOfContents = false
 showCards = false
 groupByYear = true
-cardView = false
+cardView = true
 cardViewScreenWidth = false
 
 [sitemap]
