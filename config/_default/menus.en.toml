@@ -14,16 +14,21 @@ pageRef = "posts"
 weight = 2
 
 [[main]]
+name = "games"
+pageRef = "games"
+weight = 3
+
+[[main]]
 identifier = "github"
 pre = "github"
 url = "https://github.com/chili-chip"
-weight = 3
+weight = 4
 
 [[main]]
 identifier = "discord"
 pre = "discord"
 url = "https://discord.gg/xB9sPYKBZc"
-weight = 4
+weight = 5
 
 [[footer]]
 none = "none"
