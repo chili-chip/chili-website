@@ -1,0 +1,52 @@
+{{/* Shortcode usage: {{< game-iframe url="https://example.com/game" width="600" height="600" title="Optional title" >}} */}}
+{{ $url := .Get "url" }}
+{{ if not $url }}<div class="text-red-600 font-semibold">game-iframe shortcode: missing required param 'url'</div>{{ else }}
+  {{ $width := .Get "width" | default "600" }}
+  {{ $height := .Get "height" | default "600" }}
+  {{ $title := .Get "title" | default "Embedded Game" }}
+  {{ $id := printf "game-frame-%s" (delimit (shuffle (seq 0 9)) "") | lower }}
+  <div data-game-iframe class="game-embed" style="position:relative;display:inline-block; margin-bottom: 1rem;">
+    <iframe
+      id="{{ $id }}"
+      data-game-frame
+      src="{{ $url }}"
+      width="{{ $width }}"
+      height="{{ $height }}"
+      style="border:none;"
+      tabindex="0"
+      title="{{ $title }}"
+      loading="lazy"
+      referrerpolicy="no-referrer"
+    ></iframe>
+    <button
+      type="button"
+      data-game-focus-btn
+      data-initial-label="click to focus"
+      style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.55);color:#fff;font-size:1.1rem;font-weight:600;border:2px solid #fff;border-radius:4px;cursor:pointer;"
+      aria-label="click to focus the embedded game"
+    >
+      click to focus
+    </button>
+  </div>
+
+  {{/* Use the Blowfish button shortcode. We need to render it from inside this shortcode, so we feed it through .Page.RenderString. */}}
+  {{ $buttonShortcode := printf "{{< button href=\"%s\" target=\"_blank\" rel=\"noopener\" >}}Open game in a new tab{{< /button >}}" $url }}
+  {{ .Page.RenderString $buttonShortcode }}
+
+  {{/* Inject mobile-hide CSS only once per page */}}
+  {{ if not (.Page.Scratch.Get "gameIframeMobileCSSIncluded") }}
+    <style>
+      @media (max-width: 767px) {
+        .game-embed { display: none !important; }
+      }
+    </style>
+    {{ .Page.Scratch.Set "gameIframeMobileCSSIncluded" true }}
+  {{ end }}
+
+  {{/* Include the script only once per page */}}
+  {{ if not (.Page.Scratch.Get "gameIframeScriptIncluded") }}
+    {{ $script := resources.Get "js/game-iframe-focus.js" | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+    {{ .Page.Scratch.Set "gameIframeScriptIncluded" true }}
+  {{ end }}
+{{ end }}
