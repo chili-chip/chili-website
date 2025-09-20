@@ -2,6 +2,7 @@
 title: docs
 
 cascade:
+  showDateUpdated: true
   showDate: false
   showAuthor: false
   invertPagination: true
