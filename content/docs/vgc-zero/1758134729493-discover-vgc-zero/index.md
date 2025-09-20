@@ -1,6 +1,7 @@
 ---
 title: "Discover VGC Zero"
 date: 2025-09-17
+lastmod: 2025-09-20
 draft: false
 description: "VGC Zero is an ultra-portable video game console, small enough for your keychain, designed for gamers and creators alike."
 tags: ["vgc-zero", "console", "keychain", "portable", "gaming", "open-source"]
