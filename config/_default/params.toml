@@ -4,6 +4,11 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 defaultBackgroundImage = "background.png"
+mainSections = [
+  "posts",
+  "docs",
+  "games"
+]
 firebase = { }
 fathomAnalytics = { }
 verification = { }
@@ -22,7 +27,7 @@ layout = "background"
 homepageImage = "background.png"
 showRecent = true
 showRecentItems = 3
-showMoreLink = true
+showMoreLink = false
 showMoreLinkDest = "/posts"
 cardView = true
 cardViewScreenWidth = false
