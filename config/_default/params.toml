@@ -3,7 +3,7 @@ defaultAppearance = "dark"
 autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
-defaultBackgroundImage = "background.png"
+defaultBackgroundImage = "img/background.png"
 mainSections = [
   "posts",
   "docs",
@@ -24,7 +24,7 @@ showScrollToTop = true
 
 [homepage]
 layout = "background"
-homepageImage = "background.png"
+homepageImage = "img/background.png"
 showRecent = true
 showRecentItems = 3
 showMoreLink = false
