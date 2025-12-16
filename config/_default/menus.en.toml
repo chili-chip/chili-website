@@ -4,7 +4,12 @@ pageRef = "docs"
 weight = 1
 
 [[main]]
-name = "vgc-zero"
+name = "game sdk"
+pageRef = "docs/game-sdk"
+parent = "docs"
+
+[[main]]
+name = "vgc zero"
 pageRef = "docs/vgc-zero"
 parent = "docs"
 
