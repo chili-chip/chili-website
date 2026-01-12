@@ -20,29 +20,72 @@ The `Pen` class represents a color, which can be created using RGB values or pre
 
 Below are listed all the drawing functions available in the SDK. You can call those methods on any `Surface` instance. 
 
-### Clearing the screen
-To clear the screen, you can use the `clear()` method.
+You should call all drawing functions within the `render` function, which is called once per frame.
 ```cpp
 void render(uint32_t time) {
-    screen.clear(); // Clear the screen
-    // Render game graphics
+    // Drawing code goes here
 }
 ```
 
+> [!TIP]
+> Use blit namespace to avoid prefixing all calls with `blit::`.
+> ```cpp
+> using namespace blit;
+> ```
+
+### Setting the pen color
+Before drawing, you need to set the pen color. To set the current pen color, create a `Pen` object and assign it to the `pen` property of the `Surface`.
+
+```cpp
+screen.pen = Pen(255, 0, 0); // Set pen color to red
+```
+
+### Clearing the screen
+To clear the screen, you can use the `clear()` method.
+
+```cpp
+screen.pen = Pen(0, 0, 0); // Set pen color to black
+screen.clear(); // Clear the screen (fill with black)
+```
+
+{{< alert>}}
+This fills the entire surface with the current pen color.
+{{< /alert >}}
+
 ### Drawing shapes
 You can draw various shapes using the following methods:
-- `pixel(int x, int y, blit::Pen color)`: Draw a single pixel at (x, y) with the specified color.
-    ```cpp
-    void render(uint32_t time) {
-    screen.clear(); // Clear the screen
-    screen.pixel(10, 10, blit::Pen(255, 0, 0)); // Draw a red pixel at coordinates (10, 10)
-    }
-    ```
 
-- `void blit::Surface::rectangle(int x, int y, int width, int height, blit::Pen color)`: Draw a filled rectangle.
-    ```cpp
-    void render(uint32_t time) {
-        screen.clear(); // Clear the screen
-        screen.rectangle(20, 20, 50, 30, blit::Pen(0, 255, 0)); // Draw a green rectangle
-    }
-    ```
+#### Pixel
+To draw a single pixel on the surface, use the `pixel()` method. This method takes one parameter: a `Point` object representing the coordinates of the pixel to draw.
+
+`screen.pixel(Point &p)`
+
+```cpp
+screen.pen = Pen(0, 0, 0); // Set pen color to black
+screen.clear(); // Clear the screen (fill with black)
+screen.pen = Pen(255, 0, 0); // Set pen color to red
+screen.pixel(Point(64, 64)); // Draw a pixel (red) at (64, 64)
+```
+
+![Alt text](pixel.webp "Red pixel drawn at (64, 64)")
+
+#### Rectangle
+To draw a filled rectangle on the surface, use the `rectangle()` method. This method takes one parameter: a `Rect` object representing the position and size of the rectangle to draw.
+
+`screen.rectangle(Rect &r)`
+
+```cpp
+screen.pen = Pen(0, 0, 0); // Set pen color to black
+screen.clear(); // Clear the screen (fill with black)
+screen.pen = Pen(255, 0, 0); // Set pen color to red
+screen.rectangle(Rect(10, 10, 50, 100)); // Draw a red rectangle at (10,10) with width 50 and height of 100
+screen.pen = Pen(0, 0, 255); // Set pen color to blue
+screen.rectangle(Rect(80, 10, 34, 15)); // Draw a blue rectangle at (80,10) with width 34 and height of 15
+screen.pen = Pen(0, 255, 0); // Set pen color to green
+screen.rectangle(Rect(46, 50, 20, 40)); // Draw a green rectangle at (46,50) with width 20 and height of 40
+```
+
+![Alt text](rectangle.webp "Three rectangles drawn in red, blue, and green")
+
+> [!TIP]
+> Notice how the rectangles overlap. The last rectangle drawn appears on top of the previous one. This is because drawing operations are performed in the order they are called.
