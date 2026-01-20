@@ -1,13 +1,13 @@
 ---
-title: "Graphics"
-date: 2025-12-16
-lastmod: 2025-12-16
+title: "Graphics - shapes"
+date: 2026-01-20
+lastmod: 2026-01-20
 draft: false
 description: "Learn about the graphics capabilities and API of the Game SDK for VGC Zero."
 tags: ["sdk", "api", "graphics", "vgc-zero", "development"]
 ---
 
-This section covers the graphics capabilities and API of the Game SDK for VGC Zero. It includes information on drawing techniques, sprite handling, tilemaps, and other graphical features available to developers.
+This section covers the graphics capabilities and API of the Game SDK for VGC Zero. It includes information on basics of drawing and drawing shapes.
 
 ## Drawing basics
 The Game SDK provides a variety of functions for drawing shapes, images, and text to the `screen`.
@@ -158,54 +158,4 @@ screen.polygon({
     Point(100, 110),
     Point(40, 110)
 }); // Draw a green pentagon
-```
-
-### Drawing text
-Use the text helpers to render strings with a `Font`, optionally bounding them to a rectangle. Set `screen.pen` before calling these functions.
-
-#### Text in a rectangle
-Renders text within a `Rect`, applying alignment and optional variable-width spacing.
-
-`screen.text(std::string_view message, const Font &font, const Rect &r, bool variable = true, TextAlign align = TextAlign::top_left)`
-
-```cpp
-screen.pen = Pen(255, 255, 255);
-Rect box(10, 10, 100, 40);
-screen.text("Hello world", minimal_font, box, true, TextAlign::center_center);
-```
-
-#### Text at a point
-Renders text starting at a specific point. Alignment still applies relative to the point.
-
-`screen.text(std::string_view message, const Font &font, const Point &p, bool variable = true, TextAlign align = TextAlign::top_left)`
-
-```cpp
-screen.pen = Pen(0, 255, 200);
-screen.text("Score: 42", minimal_font, Point(10, 80));
-```
-
-#### Measure text
-Compute the pixel size of rendered text for layout before drawing.
-
-`screen.measure_text(std::string_view message, const Font &font, bool variable = true)`
-
-```cpp
-Size size = screen.measure_text("Hello", minimal_font);
-// size.w and size.h hold the width and height in pixels
-```
-
-#### Wrap text
-Wrap a string to fit a given width using the specified font. Returns a new wrapped string.
-
-`screen.wrap_text(std::string_view message, int32_t width, const Font &font, bool variable = true, bool words = true)`
-
-```cpp
-std::string wrapped = screen.wrap_text(
-    "This is a long line that needs wrapping.",
-    120,
-    minimal_font,
-    true,
-    true
-);
-screen.text(wrapped, minimal_font, Rect(10, 120, 120, 80));
 ```

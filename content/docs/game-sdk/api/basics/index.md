@@ -1,5 +1,5 @@
 ---
-title: "Basics"
+title: "Game SDK basics"
 date: 2025-12-16
 lastmod: 2025-12-16
 draft: false
