@@ -89,3 +89,123 @@ screen.rectangle(Rect(46, 50, 20, 40)); // Draw a green rectangle at (46,50) wit
 
 > [!TIP]
 > Notice how the rectangles overlap. The last rectangle drawn appears on top of the previous one. This is because drawing operations are performed in the order they are called.
+
+#### Vertical span
+To draw a vertical line segment, use `v_span()`. The `Point` sets the starting coordinate, and the `int16_t` value sets how many pixels to draw downward from that point.
+
+`screen.v_span(Point p, int16_t c)`
+
+```cpp
+screen.pen = Pen(0, 0, 0);
+screen.clear();
+screen.pen = Pen(255, 255, 0);
+screen.v_span(Point(64, 20), 80); // Draw a vertical yellow span 80 pixels tall starting at (64, 20)
+```
+
+#### Horizontal span
+To draw a horizontal line segment, use `h_span()`. The `Point` sets the starting coordinate, and the `int16_t` value sets how many pixels to draw to the right from that point.
+
+`screen.h_span(Point p, int16_t c)`
+
+```cpp
+screen.pen = Pen(0, 0, 0);
+screen.clear();
+screen.pen = Pen(255, 0, 255);
+screen.h_span(Point(20, 64), 100); // Draw a horizontal magenta span 100 pixels wide starting at (20, 64)
+```
+
+#### Line
+To draw a straight line between two points, use the `line()` method.
+
+`screen.line(const Point &p1, const Point &p2)`
+
+```cpp
+screen.pen = Pen(255, 255, 255);
+screen.line(Point(10, 10), Point(120, 90)); // Draw a white line from (10, 10) to (120, 90)
+```
+
+#### Circle
+To draw a circle outline, use the `circle()` method. Pass the center `Point` and a radius in pixels.
+
+`screen.circle(const Point &c, int32_t r)`
+
+```cpp
+screen.pen = Pen(0, 200, 255);
+screen.circle(Point(64, 64), 30); // Draw a cyan circle centered at (64, 64) with radius 30
+```
+
+#### Triangle
+To draw a triangle connecting three points, use the `triangle()` method.
+
+`screen.triangle(Point p1, Point p2, Point p3)`
+
+```cpp
+screen.pen = Pen(255, 128, 0);
+screen.triangle(Point(30, 90), Point(90, 20), Point(140, 110)); // Draw an orange triangle
+```
+
+#### Polygon
+To draw a polygon from a list of points, use the `polygon()` method with a `std::vector<Point>`.
+
+`screen.polygon(std::vector<Point> p)`
+
+```cpp
+screen.pen = Pen(0, 255, 128);
+screen.polygon({
+    Point(30, 60),
+    Point(70, 30),
+    Point(110, 60),
+    Point(100, 110),
+    Point(40, 110)
+}); // Draw a green pentagon
+```
+
+### Drawing text
+Use the text helpers to render strings with a `Font`, optionally bounding them to a rectangle. Set `screen.pen` before calling these functions.
+
+#### Text in a rectangle
+Renders text within a `Rect`, applying alignment and optional variable-width spacing.
+
+`screen.text(std::string_view message, const Font &font, const Rect &r, bool variable = true, TextAlign align = TextAlign::top_left)`
+
+```cpp
+screen.pen = Pen(255, 255, 255);
+Rect box(10, 10, 100, 40);
+screen.text("Hello world", minimal_font, box, true, TextAlign::center_center);
+```
+
+#### Text at a point
+Renders text starting at a specific point. Alignment still applies relative to the point.
+
+`screen.text(std::string_view message, const Font &font, const Point &p, bool variable = true, TextAlign align = TextAlign::top_left)`
+
+```cpp
+screen.pen = Pen(0, 255, 200);
+screen.text("Score: 42", minimal_font, Point(10, 80));
+```
+
+#### Measure text
+Compute the pixel size of rendered text for layout before drawing.
+
+`screen.measure_text(std::string_view message, const Font &font, bool variable = true)`
+
+```cpp
+Size size = screen.measure_text("Hello", minimal_font);
+// size.w and size.h hold the width and height in pixels
+```
+
+#### Wrap text
+Wrap a string to fit a given width using the specified font. Returns a new wrapped string.
+
+`screen.wrap_text(std::string_view message, int32_t width, const Font &font, bool variable = true, bool words = true)`
+
+```cpp
+std::string wrapped = screen.wrap_text(
+    "This is a long line that needs wrapping.",
+    120,
+    minimal_font,
+    true,
+    true
+);
+screen.text(wrapped, minimal_font, Rect(10, 120, 120, 80));
+```
