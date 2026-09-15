@@ -11,10 +11,9 @@ tags: ["citsy", "bitsy", "vgc-zero", "32blit", "engine"]
 Bitsy is the little engine for little games, worlds, and stories. Its rooms are 16×16 tiles of 8×8 pixels. That is **exactly** 128×128 — the same resolution as VGC Zero’s screen, and the same room size as the [Chili Room Editor](/posts/map-editor/). No scaling tricks. One pixel on the editor is one pixel on the handheld.
 
 {{< figure
-  src="featured.png"
+  src="launcher.png"
   alt="Citsy launcher showing Mossland and Sandbox"
   caption="The citsy-32blit launcher on a 128×128 canvas (web build)"
-  default="true"
 >}}
 
 ## TL;DR
