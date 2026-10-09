@@ -2,7 +2,7 @@
 title: "Record gif"
 date: 2026-10-09
 draft: false
-weight: 12
+weight: 13
 showHero: false
 description: "Record a GIF or take a snapshot of your game while it plays."
 summary: "Record a GIF or take a snapshot of your game while it plays."

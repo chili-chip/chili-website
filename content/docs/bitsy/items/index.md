@@ -6,9 +6,12 @@ weight: 4
 description: "Add items the player picks up, set a starting inventory, and use items to unlock things."
 summary: "Add items the player picks up, set a starting inventory, and use items to unlock things."
 tags: ["bitsy", "creator", "tutorial", "items"]
+showHero: false
 ---
 
 Items are things the avatar picks up by walking over them: keys, flowers, coins, cups of tea. A picked-up item disappears from the room and is added to the player's inventory.
+
+{{< screenshot src="featured.png" alt="The inventory window next to the paint window editing the tea item" caption="The tea item in the paint window, and the inventory window" >}}
 
 ## Add an item
 

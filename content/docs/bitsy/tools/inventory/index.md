@@ -2,7 +2,7 @@
 title: "Inventory"
 date: 2026-10-09
 draft: false
-weight: 8
+weight: 12
 showHero: false
 description: "Set starting items and variables, and watch them change while you play."
 summary: "Set starting items and variables, and watch them change while you play."

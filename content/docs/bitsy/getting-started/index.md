@@ -27,7 +27,7 @@ Every game you save appears in the **Projects** tab of your profile. Choose **Ne
 
 The editor is made of windows (the Bitsy editor calls them cards). The toolbar along the right edge shows or hides each one, and you can drag a window by its title bar to move it.
 
-{{< figure
+{{< screenshot
   src="featured.png"
   alt="The Chili Creator with the room, paint and colors windows open"
   caption="The room, paint and colors windows in a new game"

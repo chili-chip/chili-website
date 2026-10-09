@@ -6,9 +6,12 @@ weight: 2
 description: "Paint a room from tiles, make walls, add more rooms, and pick colors."
 summary: "Paint a room from tiles, make walls, add more rooms, and pick colors."
 tags: ["bitsy", "creator", "tutorial", "rooms"]
+showHero: false
 ---
 
 A room is one screen of your game: a 16×16 grid of tiles. A new game starts with one room, the avatar, a sample tile, a sample sprite and a sample item.
+
+{{< screenshot src="featured.png" alt="The room window with walls highlighted next to the paint window editing a wall tile" caption="A wall tile in the paint window, with **walls** turned on in the room window" >}}
 
 ## Paint a room
 

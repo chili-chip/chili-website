@@ -6,9 +6,12 @@ weight: 6
 description: "Link rooms together with exits and transitions, and end your game."
 summary: "Link rooms together with exits and transitions, and end your game."
 tags: ["bitsy", "creator", "tutorial", "exits", "endings"]
+showHero: false
 ---
 
 Exits move the avatar from one room to another. Endings finish the game. Both live in the **exits & endings** window; open it from the toolbar or from the room window.
+
+{{< screenshot src="featured.png" alt="The exits and endings window with a two-way exit, and both ends marked in the room" caption="A two-way exit: both ends are marked in the room" >}}
 
 ## Add an exit
 
@@ -43,9 +46,9 @@ Open an exit's options to give it an **exit dialog**, which plays when the avata
 - **add narration**: a line of text, like "You walk through the doorway".
 - **add lock**: the door only opens if the player has an item. The preset checks for an item, unlocks the exit and says "The key opens the door!" if the player has one, and otherwise keeps it locked with "The door is locked...". Change the item and the text in the dialog editor to fit your game.
 
-Endings can be locked the same way through their dialog. The lock is set with the **lock / unlock** action from **exit and ending actions**; see [Dialogue](/docs/bitsy/dialogue/) for how branches and actions work.
+Endings can be locked the same way through their dialog. The lock is set with the **lock / unlock** action from **room actions**; see [Dialogue](/docs/bitsy/dialogue/) for how branches and actions work.
 
-You can also move the player or end the game from dialog directly, with the **exit** and **end** actions. That is how a sprite can send the player somewhere after a conversation.
+You can also move the player or end the game from dialog directly, with the **exit** and **end** room actions. That is how a sprite can send the player somewhere after a conversation.
 
 ## Next
 

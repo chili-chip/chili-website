@@ -2,7 +2,7 @@
 title: "Paint"
 date: 2026-10-09
 draft: false
-weight: 4
+weight: 6
 showHero: false
 description: "Draw the avatar, tiles, sprites and items, and set walls, animation, dialog and sounds."
 summary: "Draw the avatar, tiles, sprites and items, and set walls, animation, dialog and sounds."

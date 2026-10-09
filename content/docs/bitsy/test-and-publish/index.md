@@ -6,9 +6,12 @@ weight: 7
 description: "Playtest in the editor, release and list your game on the marketplace, and play it on VGC Zero."
 summary: "Playtest in the editor, release and list your game on the marketplace, and play it on VGC Zero."
 tags: ["bitsy", "creator", "tutorial", "marketplace", "vgc-zero"]
+showHero: false
 ---
 
 ## Test in the editor
+
+{{< screenshot src="featured.png" alt="The room window in play mode next to the inventory window" caption="Play mode, with the inventory window open to watch item counts" >}}
 
 Press **play** (the green triangle at the top of the toolbar) to play from the start. The Creator runs your game with **Citsy**, the same engine that runs it on VGC Zero, so what you see is what the handheld shows. Press **play** again to stop and go back to editing.
 

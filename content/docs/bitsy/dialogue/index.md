@@ -6,6 +6,7 @@ weight: 5
 description: "Write what sprites and items say: pages, text effects, sequences, and conditions on items and variables."
 summary: "Write what sprites and items say: pages, text effects, sequences, and conditions on items and variables."
 tags: ["bitsy", "creator", "tutorial", "dialogue"]
+showHero: false
 ---
 
 Dialog is the text that appears when the avatar talks to a sprite, picks up an item, or reaches an ending. The game's **title**, set at the top of the **game** window, is the first thing the player sees.
@@ -25,15 +26,17 @@ Select some text and use **text effects** to make it wavy, shaky, rainbow-colore
 
 Press **add** in the dialog window to add more than plain text. The options are grouped:
 
-- **dialog**: another block of text.
+{{< screenshot src="featured.png" alt="The dialog window with the add menu open" caption="The add menu in the dialog window" >}}
+
+- **dialog**: another block of text, or a **pagebreak** to start a new page.
 - **lists**: text that changes each time the player talks to the sprite.
   - **sequence list** goes through each item once, then keeps repeating the last one. Good for a conversation that moves forward.
   - **cycle list** repeats its items in order, forever.
   - **shuffle list** picks one at random each time.
-- **branching list**: shows the first branch whose condition is true. Branches can check an **item** count or a **variable**.
-- **item and variable actions**: give or take items, or set and change variables.
-- **exit and ending actions**: move the player to another room, end the game, or lock and unlock an exit or ending.
-- **pagebreak**: start a new page of dialog.
+  - **branching list** shows the first branch whose condition is true. Branches can check an **item** count or a **variable**.
+- **room actions**: move the player to another room (**exit**), **end** the game, **lock / unlock** an exit or ending, or change the room's **palette** or the **avatar**.
+- **sound actions**: play a **blip** or change the **tune**.
+- **item and variable actions**: give or take items, show how many of an item the player has, or set and change variables.
 
 Each block has its own controls in the dialog window, so you build logic by clicking rather than typing code. If you are curious, **show code** reveals the Bitsy script behind it.
 
@@ -42,8 +45,8 @@ Each block has its own controls in the dialog window, so you build logic by clic
 A guard who only lets the player through with a key:
 
 1. Draw a `guard` sprite and place it in a doorway.
-2. In the guard's dialog, **add** a **branching list** with an **item branch**: if `key` in inventory is at least 1.
-3. In that branch, write "Ah, you have the key. Go ahead." and add an **exit** action that moves the player to the next room.
+2. In the guard's dialog, **add** a **branching list** from **lists** with an **item branch**: if `key` in inventory is at least 1.
+3. In that branch, write "Ah, you have the key. Go ahead." and add an **exit** from **room actions** that moves the player to the next room.
 4. In the **default branch**, write "Nobody passes without a key."
 
 Now scatter a `key` item somewhere in the first room and play it through.

@@ -2,7 +2,7 @@
 title: "Colors"
 date: 2026-10-09
 draft: false
-weight: 5
+weight: 7
 showHero: false
 description: "Make and edit the three-color palettes your rooms use."
 summary: "Make and edit the three-color palettes your rooms use."

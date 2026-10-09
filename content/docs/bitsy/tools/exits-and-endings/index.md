@@ -2,7 +2,7 @@
 title: "Exits & endings"
 date: 2026-10-09
 draft: false
-weight: 7
+weight: 5
 showHero: false
 description: "Connect rooms with exits, add endings, pick transitions, and lock doors."
 summary: "Connect rooms with exits, add endings, pick transitions, and lock doors."

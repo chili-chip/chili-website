@@ -6,9 +6,12 @@ weight: 3
 description: "Draw the player character, choose where they start, and add characters for them to talk to."
 summary: "Draw the player character, choose where they start, and add characters for them to talk to."
 tags: ["bitsy", "creator", "tutorial", "sprites"]
+showHero: false
 ---
 
 ## The avatar
+
+{{< screenshot src="featured.png" alt="The room window next to the paint window editing the avatar" caption="The avatar selected in the paint window" >}}
 
 The avatar is the character the player moves around. There is exactly one.
 
