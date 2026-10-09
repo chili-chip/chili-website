@@ -6,6 +6,7 @@ weight: 1
 description: "What Bitsy is, how to open the editor in the Chili Creator, and a tour of its windows."
 summary: "What Bitsy is, how to open the editor in the Chili Creator, and a tour of its windows."
 tags: ["bitsy", "creator", "getting-started", "tutorial"]
+showHero: false
 ---
 
 [Bitsy](https://bitsy.org) is a tiny game engine for small games, worlds and stories. You paint rooms out of 8×8 pixel tiles, put characters and items in them, write what the characters say, and link rooms together. There is no code to write.
@@ -47,6 +48,8 @@ The editor is made of windows (the Bitsy editor calls them cards). The toolbar a
 | **record gif** | Record a GIF of your game while it plays. |
 
 The **play** button (the green triangle at the top of the toolbar) switches between editing and playing your game. Press it again to stop and go back to editing.
+
+Each window has its own page under [Editor tools](/docs/bitsy/tools/).
 
 ## The words Bitsy uses
 
