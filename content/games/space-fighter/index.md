@@ -1,5 +1,5 @@
 ---
-title: "Space Fighter"
+title: "Ultra Hyper Space Super Fighters TURBO"
 date: 2026-10-06
 lastmod: 2026-10-10
 draft: false
@@ -30,7 +30,6 @@ The galaxy is in danger! The evil aliens are invading, and it's up to you to sto
 | X | B (back) |
 | Esc | MENU (pause) |
 
-On mobile the embedded game is hidden; use the button to open it in a new tab.
 
 ### Options
 
