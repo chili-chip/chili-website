@@ -1,0 +1,10 @@
+{{- /* A UI screenshot at its natural size (captured at 2x), centered and never upscaled. */ -}}
+{{- $img := .Page.Resources.GetMatch (.Get "src") -}}
+{{- with $img }}
+<figure class="mx-auto" style="max-width: {{ div .Width 2 }}px">
+  <img class="my-0 rounded-md" src="{{ .RelPermalink }}" width="{{ div .Width 2 }}" height="{{ div .Height 2 }}" alt="{{ $.Get "alt" }}" loading="lazy" />
+  {{- with $.Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
+{{- else }}
+{{- errorf "screenshot: %q not found in %s" ($.Get "src") $.Page.File.Path -}}
+{{- end }}

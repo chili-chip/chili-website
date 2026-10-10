@@ -14,6 +14,11 @@ pageRef = "docs/vgc-zero"
 parent = "docs"
 
 [[main]]
+name = "bitsy"
+pageRef = "docs/bitsy"
+parent = "docs"
+
+[[main]]
 name = "blog"
 pageRef = "posts"
 weight = 2
