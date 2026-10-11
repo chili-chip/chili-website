@@ -9,9 +9,6 @@ mainSections = [
   "docs",
   "games"
 ]
-firebase = { }
-fathomAnalytics = { }
-verification = { }
 
 [header]
 layout = "fixed"

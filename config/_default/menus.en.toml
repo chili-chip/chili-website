@@ -41,9 +41,6 @@ url = "https://discord.gg/xB9sPYKBZc"
 weight = 5
 
 [[footer]]
-none = "none"
-
-[[footer]]
 name = "tags"
 pageRef = "tags"
 weight = 1

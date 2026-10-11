@@ -9,4 +9,4 @@ cascade:
   groupByYear: false
 ---
 
-This section contains the documentations for all of our projects.
+Documentation for our projects: the VGC Zero console, the Game SDK and making Bitsy games.
