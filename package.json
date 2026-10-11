@@ -1,20 +1,18 @@
 {
-  "name": "blowfish_template",
+  "name": "chili-website",
   "version": "1.0.0",
-  "description": "Blowfish Template",
-  "main": "index.js",
+  "private": true,
+  "description": "Source of chilichip.eu, the ChiliChip website: blog, docs and game pages, built with Hugo and the Blowfish theme.",
   "scripts": {
     "dev": "hugo server --minify -D -E -F"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nunocoracao/blowfish_template.git"
+    "url": "git+https://github.com/chili-chip/chili-website.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nunocoracao/blowfish_template/issues"
+    "url": "https://github.com/chili-chip/chili-website/issues"
   },
-  "homepage": "https://github.com/nunocoracao/blowfish_template#readme"
+  "homepage": "https://chilichip.eu"
 }
