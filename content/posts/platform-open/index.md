@@ -1,26 +1,36 @@
 ---
 title: "The chili platform is open. Come on in!"
 date: 2026-10-10
-draft: true
+draft: false
 description: "Our new home for everything VGC Zero is open: a studio, a community and soon a store, all in one place."
 tags: ["platform", "community", "store", "creator"]
 ---
 
-<!-- TODO before publishing: add the screenshots below, then set draft: false. -->
-
 Big week, chili fam: [the chili platform](https://platform.chilichip.eu) is open! It is our home for everything VGC Zero: a studio, a community and soon a store, all in one place. Pull up a chair, make an account and look around. We will show you what is inside.
 
-<!-- TODO: add picture: the home page, full width. Save it as featured.png in this folder to use it as the post's cover too. -->
+{{< figure
+  src="featured.png"
+  alt="The chili platform home page"
+  caption="The home page of the chili platform"
+>}}
 
 ## What is inside
 
 **The studio.** Make your own game with our no-code game creator, right in your browser. Soon it will tell you when your game is saved, and warn you before you leave without saving.
 
-<!-- TODO: add picture: the game creator with a game in progress. -->
+{{< figure
+  src="creator.png"
+  alt="The chili game creator with a room, the paint tool and the color picker open"
+  caption="The game creator, right in your browser"
+>}}
 
 **The community.** Chat in the forum, share your games, and write your posts with simple formatting and a live preview as you type.
 
-<!-- TODO: add picture: a forum thread. -->
+{{< figure
+  src="forum-thread.png"
+  alt="A forum thread on the chili platform"
+  caption="The very first thread in the community forum"
+>}}
 
 **The shop, coming soon.** Our store is getting its final polish before it opens. Soon you will be able to browse by category, search, and check out, and digital games will skip the address step. We will let you know the moment it is ready.
 
@@ -28,7 +38,11 @@ Big week, chili fam: [the chili platform](https://platform.chilichip.eu) is open
 
 Not sure where to start? The home page has a "Start here" row, live games from the marketplace and fresh forum threads. Make it yours in settings: your profile, avatar, privacy and preferences. If you get stuck, the help center has your back. Want the latest news? Sign up for the newsletter at the bottom of any page.
 
-<!-- TODO: add picture: the settings page or the help center. -->
+{{< figure
+  src="help-center.png"
+  alt="The chili platform help center"
+  caption="The help center"
+>}}
 
 ## Still a preview, and we are still tidying
 
