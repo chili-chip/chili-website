@@ -141,8 +141,8 @@ pip install 32blit
 
 1. Connect your VGC Zero to your computer via USB.
 2. Put the VGC Zero into bootloader mode by holding down the BOOT button while plugging it in.
-3. Your computer should recognize the VGC Zero as a removable drive named `RPI-RP2`.
-4. Copy the generated `.uf2` file from the `build.vgc` directory to the `RPI-RP2` drive.
+3. Your computer should recognize the VGC Zero as a removable drive named `RP2350`.
+4. Copy the generated `.uf2` file from the `build.vgc` directory to the `RP2350` drive.
 5. The console will reboot and run your game.
 
 ### Troubleshooting
