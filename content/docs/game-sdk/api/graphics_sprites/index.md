@@ -41,7 +41,7 @@ Include the generated header and load the sprite sheet in your `init()` function
 #include "assets.hpp"
 
 void init() {
-  screen.sprites = SpriteSheet::load(asset_sprites);
+  screen.sprites = Surface::load(asset_sprites);
 }
 ```
 
@@ -50,14 +50,14 @@ void init() {
 You can also load sprites manually if you have packed sprite data:
 
 ```cpp
-SpriteSheet *more_sprites;
+Surface *more_sprites;
 
 void init() {
-  more_sprites = SpriteSheet::load(packed_data);
+  more_sprites = Surface::load(packed_data);
 }
 ```
 
-Since a `SpriteSheet` derives from `Surface`, it can be copied using `blit()`:
+Since the sprite sheet is a `Surface`, it can be copied using `blit()`:
 
 ```cpp
 // Copy an 8x8 region from the sprite sheet to screen

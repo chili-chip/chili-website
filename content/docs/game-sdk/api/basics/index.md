@@ -72,7 +72,7 @@ You can include these assets in your game code with:
 then load them into memory with:
 
 ```cpp
-  screen.sprites = SpriteSheet::load(asset_sprites);
+  screen.sprites = Surface::load(asset_sprites);
 ```
 This will load the `sprites.png` asset as a sprite sheet that can be used for rendering sprites in your game.
 
