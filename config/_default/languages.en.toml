@@ -1,5 +1,5 @@
-languageCode = "en"
-languageName = "English"
+locale = "en"
+label = "English"
 weight = 1
 title = "chilichip"
 
@@ -11,13 +11,13 @@ description = "Chilichip is an indie consumer electronics company creating bold,
 dateFormat = "2 January 2006"
 logo = "img/logo.png"
 
-["params.author"]
+[params.author]
 name = "chilichip"
 bio = "Makers of VGC Zero, a tiny open-source handheld for playing and making games."
 headline = "spicy electronics"
 image = "img/logo.png"
 
-[["params.author".links]]
+[[params.author.links]]
 github = "https://github.com/chili-chip"
 discord = "https://discord.gg/xB9sPYKBZc"
 email = "mailto:chilichipelectronics@gmail.com"

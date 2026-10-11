@@ -4,7 +4,7 @@ Source of [chilichip.eu](https://chilichip.eu): the blog, the docs and the game 
 
 ## Requirements
 
-- **Hugo extended, 0.164.0 or newer.** `config/_default/module.toml` sets `min = "0.164.0"` and CI builds with 0.164.0. The pinned Blowfish version allows Hugo up to 0.167.0 (`themes/blowfish/config.toml`), so stay in that range. Get it from the [Hugo releases page](https://github.com/gohugoio/hugo/releases) (`hugo_extended_0.164.0_*`), or see [Install Hugo](https://gohugo.io/installation/). Check with `hugo version`: the output must contain `+extended`.
+- **Hugo extended, 0.164.0 to 0.167.0.** CI builds with 0.164.0 (`.github/workflows/pages.yml`). The lower bound comes from `config/_default/module.toml` (`min = "0.164.0"`), the upper bound from the pinned Blowfish theme (`max = "0.167.0"` in `themes/blowfish/config.toml`); outside that range Hugo warns that the theme is not compatible. Get it from the [Hugo releases page](https://github.com/gohugoio/hugo/releases) (`hugo_extended_0.164.0_*`), or see [Install Hugo](https://gohugo.io/installation/). Check with `hugo version`: the output must contain `+extended`.
 - **Git**, to fetch the theme submodule.
 - **npm** (optional), only as a shortcut for `npm run dev`.
 
@@ -22,7 +22,7 @@ Open http://localhost:1313. The server reloads when you save a file. `-D -E -F` 
 To check a production build the same way CI does:
 
 ```sh
-hugo -d ./public
+hugo -d ./public --baseURL https://chilichip.eu
 ```
 
 If the build fails with a theme error, the submodule is missing or out of date: run `git submodule update --init` again.
@@ -37,8 +37,9 @@ If the build fails with a theme error, the submodule is missing or out of date: 
 | `data/authors/<id>.json` | Post authors (name, bio, links), see [Blowfish: Multiple Authors](https://blowfish.page/docs/multi-author/). |
 | `layouts/shortcodes/` | Our own shortcodes: `game-iframe`, `screenshot`. |
 | `archetypes/` | Templates used by `hugo new`. |
-| `config/_default/` | Site config: `params.toml` (theme options), `menus.en.toml`, `languages.en.toml`. |
-| `static/`, `assets/` | Static files and theme assets (logo, favicons, CSS). |
+| `config/_default/` | Site config: `hugo.toml` (base URL, taxonomies, outputs), `params.toml` (theme options), `languages.en.toml` (site title, description, site-wide author), `menus.en.toml`, `markup.toml` (Markdown and syntax highlighting), `module.toml` (supported Hugo version). |
+| `assets/` | Files Hugo processes: `img/` (logo, background) and `js/` (`game-iframe-focus.js`). |
+| `static/` | Files copied to the site as they are: favicons and app icons. |
 
 New post:
 
@@ -54,8 +55,12 @@ Embed a game (its web build is usually hosted on GitHub Pages of the game's repo
 
 ## Deploy
 
-Every push to `main` runs `.github/workflows/pages.yml`. It builds the site with Hugo 0.164.0 extended and publishes it to GitHub Pages at https://chilichip.eu. Pull requests are **not** built, so run `hugo -d ./public` locally before you open one. You can also start the workflow by hand from the Actions tab (`workflow_dispatch`).
+Every push to `main` runs `.github/workflows/pages.yml`. It builds the site with Hugo 0.164.0 extended and publishes it to GitHub Pages at https://chilichip.eu. Pull requests are **not** built, so run the production build above locally before you open one. You can also start the workflow by hand from the Actions tab (`workflow_dispatch`).
 
 ## Updating the theme
 
-`update.sh` pulls the latest Blowfish into `themes/blowfish` and commits it directly. Before you push the update, check the new theme's supported Hugo range, because a Blowfish bump has already required a newer Hugo once.
+```sh
+./update.sh
+```
+
+`update.sh` moves the `themes/blowfish` submodule to the latest commit of Blowfish's `main` branch and commits only that submodule pointer. It does not push. Before you push, check the new theme's Hugo range (`[module.hugoVersion]` in `themes/blowfish/config.toml`; a Blowfish bump has already required a newer Hugo once), run the production build above, and update the Hugo version in this README, `config/_default/module.toml` and `.github/workflows/pages.yml` if it changed. Then `git push`.
