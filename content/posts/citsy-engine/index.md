@@ -4,6 +4,7 @@ date: 2026-09-15
 draft: false
 description: "A headless C++ Bitsy engine and 32blit player that run tiny adventure games natively on VGC Zero’s 128×128 display."
 tags: ["citsy", "bitsy", "vgc-zero", "32blit", "engine"]
+authors: ["kacper"]
 ---
 
 🚀 Today we’re launching **citsy** — a native C++ runtime for [Bitsy](https://bitsy.org) games, built for [VGC Zero](/docs/vgc-zero/discover-vgc-zero/).

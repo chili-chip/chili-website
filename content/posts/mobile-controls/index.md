@@ -4,6 +4,7 @@ date: 2025-09-21
 draft: false
 description: "Now you can play our games on mobile devices with touch controls!"
 tags: ["mobile", "web", "controls"]
+authors: ["kacper"]
 ---
 
 We are excited to announce that **all games made using our SDK are now fully playable on mobile devices**!  

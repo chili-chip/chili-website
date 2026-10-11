@@ -4,6 +4,7 @@ date: 2025-09-17
 draft: false
 description: "Hello world!"
 tags: ["hello"]
+authors: ["kacper"]
 ---
 # Hello world from Chilichip!
 
