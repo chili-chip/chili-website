@@ -124,7 +124,7 @@ Player docs: [citsy.chilichip.eu/docs](https://citsy.chilichip.eu/docs/).
 ```bash
 cmake --preset vgc
 cmake --build --preset vgc
-cp out/build/vgc/citsy-32blit.uf2 /media/$USER/RPI-RP2/
+cp out/build/vgc/citsy-32blit.uf2 /media/$USER/RP2350/
 ```
 
 Or download `citsy-32blit-v0.1.2-VGC.zip` from GitHub Releases. Hold **BOOT**, tap **RESET**, copy the UF2. On chili-chip VGC units you can also hold **X** and press power. See the [breadboard prototype guide](/docs/vgc-zero/vgc-breadboard/) and the [VGC notes in the SDK](https://github.com/chili-chip/32blit-sdk/blob/master/docs/vgc.md).
