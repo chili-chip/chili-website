@@ -4,6 +4,7 @@ date: 2025-09-28
 draft: false
 description: "Launch: A lightweight in‑browser tile/room editor for our sdk — fast iteration, deterministic C header export."
 tags: ["map-editor", "tilemap", "vgc-zero", "sdk", "tools"]
+authors: ["kacper"]
 ---
 
 🚀 Today we’re launching the **Chili Room Editor** — a focused, zero-install, in‑browser tool for building small retro‑style rooms for our sdk.
