@@ -2,7 +2,7 @@
 title: "hello-world"
 date: 2025-09-17
 draft: false
-description: "Hello world!"
+description: "Meet Chillchip, an indie electronics collective exploring creativity, innovation, and playful hardware design through thoughtful, nature-inspired devices."
 tags: ["hello"]
 authors: ["kacper"]
 ---
