@@ -2,8 +2,8 @@
 title: "Minesweeper"
 date: 2025-09-20
 draft: false
-description: "Minesweeper game"
-summary: "A classic Minesweeper game where the objective is to clear a rectangular board containing hidden 'mines' without detonating any of them, with help from clues about the number of neighboring mines in each field."
+description: "Play Minesweeper, the classic logic puzzle game, and test your deduction skills."
+summary: "Challenge your logic and deduction skills in this classic Minesweeper puzzle. Reveal safe squares, use numerical clues to identify hidden mines, and flag dangerous cells without triggering an explosion."
 tags: ["game", "logic", "puzzle"]
 ---
 
