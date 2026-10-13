@@ -2,8 +2,8 @@
 title: "Conway's Game of Life"
 date: 2025-09-21
 draft: false
-description: "Conway's Game of Life"
-summary: "Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
+description: "Play Conway's Game of Life, the classic cellular automaton, and explore how simple rules create complex patterns."
+summary: "Create and observe evolving cell patterns in Conway's Game of Life. Experiment with the grid and discover how each generation changes according to simple rules."
 tags: ["game", "automaton", "simulation"]
 heroStyle: background
 ---
