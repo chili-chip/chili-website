@@ -55,7 +55,7 @@ Embed a game (its web build is usually hosted on GitHub Pages of the game's repo
 
 ## Deploy
 
-Every push to `main` runs `.github/workflows/pages.yml`. It builds the site with Hugo 0.164.0 extended and publishes it to GitHub Pages at https://chilichip.eu. Pull requests are **not** built, so run the production build above locally before you open one. You can also start the workflow by hand from the Actions tab (`workflow_dispatch`).
+Every push to `main` runs `.github/workflows/pages.yml`. It builds the site with Hugo 0.164.0 extended and publishes it to GitHub Pages at https://chilichip.eu. Pull requests run the same build without deploying, so a broken build shows up as a failed **build** check on the PR. You can also start the workflow by hand from the Actions tab (`workflow_dispatch`).
 
 ## Updating the theme
 
