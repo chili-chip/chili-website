@@ -1,7 +1,7 @@
 ---
 title: "Discover VGC Zero"
 date: 2025-09-17
-lastmod: 2025-09-25
+lastmod: 2026-10-15
 draft: false
 description: "VGC Zero is a tiny open hardware & open source handheld (targeting 2027) built for playing and making games—right from your keychain."
 tags: ["vgc-zero", "console", "keychain", "portable", "gaming", "open-source"]
@@ -34,13 +34,37 @@ What it feels like to own & build on VGC Zero:
 
 ## Development Status
 
-We are currently working on creating first prototypes. Our work can be tracked on our [github](https://github.com/chili-chip).
+We have built two prototypes so far, and both run games. Our work can be tracked on our [github](https://github.com/chili-chip).
 
 {{< figure
     src="breadboard-prototype.jpg"
     alt="Breadboard prototype"
     caption="VGC Zero breadboard prototype (not final hardware)"
     >}}
+
+### Prototype hardware
+
+The first prototype was built on a breadboard (see the [breadboard guide](/docs/vgc-zero/vgc-breadboard/)):
+
+| Component | Part |
+|-----------|------|
+| MCU       | Raspberry Pi Pico 2 W (RP2350) |
+| Display   | 1.44" 128×128 colour TFT, ST7735S driver, SPI |
+| Audio     | HXJ8002 amplifier module + small speaker |
+| Controls  | Tactile buttons + rotary encoder |
+
+The current prototype is the **v1.1.4 PCB** ([vgc-zero-hardware](https://github.com/chili-chip/vgc-zero-hardware)):
+
+| Component | Part |
+|-----------|------|
+| MCU       | Waveshare RP2350-Plus module (RP2350, Pico-compatible) |
+| Display   | Waveshare 1.5" RGB OLED module, 128×128, SSD1351 driver, SPI |
+| Audio     | Buzzer |
+| Controls  | 10 tactile buttons |
+| Power     | USB through the MCU module, slide power switch |
+| Other     | Status LED, 3 GPIO pin headers |
+
+The v1.1.4 board has no battery, charger, headphone jack, rotary encoder or PSRAM yet. The next PCB revision moves to a TFT IPS display and adds audio filtering and a real-time clock.
 
 First public hardware target: **2027**.
 
@@ -73,14 +97,16 @@ We’ll publish guides to assemble a working prototype from **off‑the‑shelf 
 
 Build early. Hack freely. Give feedback before the compact edition lands.
 
-## Technical Specs
+## Target Specs
+
+These are the planned specs for the final VGC Zero, not the current prototype.
 
 | Component | Specification |
 |-----------|---------------|
 | CPU       | RP2350 @ 150MHz |
 | RAM       | 520KB on-chip + 16MB PSRAM |
 | Storage   | 16MB Flash |
-| Display   | 128×128 color TFT |
+| Display   | 128×128 color TFT IPS |
 | Audio     | Mono speaker, 3.5mm jack, Bluetooth audio |
 | Battery   | Target up to ~9 hours |
 | Controls  | D‑Pad, A, B, START, MENU, 2 shoulders, rotary encoder |
