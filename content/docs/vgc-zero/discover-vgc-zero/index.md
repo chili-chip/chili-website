@@ -57,11 +57,11 @@ The current prototype is the **v1.1.4 PCB** ([vgc-zero-hardware](https://github.
 
 | Component | Part |
 |-----------|------|
-| MCU       | Raspberry Pi Pico 2 module (RP2350) |
+| MCU       | Waveshare RP2350-Plus module (RP2350, Pico-compatible) |
 | Display   | Waveshare 1.5" RGB OLED module, 128×128, SSD1351 driver, SPI |
 | Audio     | Buzzer |
 | Controls  | 10 tactile buttons |
-| Power     | USB through the Pico, slide power switch |
+| Power     | USB through the MCU module, slide power switch |
 | Other     | Status LED, 3 GPIO pin headers |
 
 The v1.1.4 board has no battery, charger, headphone jack, rotary encoder or PSRAM yet. The next PCB revision moves to a TFT IPS display and adds audio filtering and a real-time clock.
