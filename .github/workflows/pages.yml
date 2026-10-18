@@ -1,73 +1,88 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
+# Build the Hugo site on every push to main and every pull request, then deploy it.
+#
+#   push to main          -> GitHub Pages (live https://chilichip.eu until the DNS move)
+#                            and the chili-website Cloudflare Pages project (production)
+#   pull request #N       -> https://website-pr-N.chilichip.eu (link posted on the PR)
+#   pull request closed   -> the preview hostname is removed
+#
+# Cloudflare steps are skipped until the CLOUDFLARE_API_TOKEN and
+# CLOUDFLARE_ACCOUNT_ID secrets exist. The move of chilichip.eu itself to
+# Cloudflare Pages is a manual step, see README "Deploy" and issue #69.
 name: Build and deploy
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Builds pull requests too (no deploy), so a broken build shows up before merge
   pull_request:
-
-  # Allows you to run this workflow manually from the Actions tab
+    types: [opened, synchronize, reopened, closed]
   workflow_dispatch:
 
 permissions:
   contents: read
 
-# Allow one concurrent deployment; each pull request gets its own group so it never cancels a deploy
+# One run per pull request or for main; a pull request never cancels a main deploy
 concurrency:
   group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
   cancel-in-progress: true
 
-# Default to bash
+env:
+  PAGES_PROJECT: chili-website
+  ZONE_NAME: chilichip.eu
+
 defaults:
   run:
     shell: bash
 
 jobs:
-  # Build job
   build:
+    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: read
+    outputs:
+      url: ${{ steps.target.outputs.url }}
     steps:
-
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v3.2.1
-        with: 
+        with:
           hugo-version: 0.164.0
           extended: true
 
-      - name: Check out code into the Go module directory
+      - name: Check out code
         uses: actions/checkout@v7
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
+          submodules: true  # Fetch Hugo themes
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Setup Pages
-        if: github.event_name != 'pull_request'
-        id: pages
-        uses: actions/configure-pages@v6
+      # Previews are built for their own hostname, so their links stay on the preview
+      - id: target
+        run: |
+          if [ "${{ github.event_name }}" = pull_request ]; then
+            echo "url=https://website-pr-${{ github.event.pull_request.number }}.$ZONE_NAME" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=https://$ZONE_NAME" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Build with Hugo
         env:
-          # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: |
-          hugo -d ./public --baseURL https://chilichip.eu
-    
-      - name: Upload artifact
+        run: hugo -d ./public --baseURL "${{ steps.target.outputs.url }}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: public/
+          retention-days: 30
+
+      - name: Upload GitHub Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
-  # Deployment job
-  deploy:
+  # Keeps https://chilichip.eu live until its DNS moves to Cloudflare Pages; remove it after the move
+  deploy-github-pages:
     if: github.event_name != 'pull_request'
+    needs: build
     permissions:
       pages: write
       id-token: write
@@ -75,8 +90,88 @@ jobs:
       name: github-pages
       url: https://chilichip.eu
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v5
+
+  deploy-cloudflare:
+    needs: build
+    # Fork PRs get no secrets, so only deploy main and same-repo PRs
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    environment:
+      name: ${{ github.event_name == 'pull_request' && 'preview' || 'production' }}
+      url: ${{ needs.build.outputs.url }}
+    concurrency:
+      group: cloudflare-deploy-${{ github.event.pull_request.number || 'main' }}
+      cancel-in-progress: true
+    env:
+      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - if: env.HAS_CLOUDFLARE != 'true'
+        run: echo "::notice::Cloudflare secrets are not set; skipping the Cloudflare deploy."
+      - if: env.HAS_CLOUDFLARE == 'true'
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: scripts
+      - if: env.HAS_CLOUDFLARE == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: public
+      # Creates the Pages project on the first run; later runs see it exists
+      - if: env.HAS_CLOUDFLARE == 'true'
+        run: |
+          npx --yes wrangler@4 pages project list > projects.txt
+          grep -qw "$PAGES_PROJECT" projects.txt \
+            || npx --yes wrangler@4 pages project create "$PAGES_PROJECT" --production-branch=main
+      - if: env.HAS_CLOUDFLARE == 'true'
+        run: >-
+          npx --yes wrangler@4 pages deploy public
+          --project-name="$PAGES_PROJECT"
+          --branch="${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'main' }}"
+          --commit-hash="${{ github.event.pull_request.head.sha || github.sha }}"
+          --commit-dirty=true
+      # Production (chilichip.eu) is attached by hand once, see README; previews attach here
+      - if: env.HAS_CLOUDFLARE == 'true' && github.event_name == 'pull_request'
+        run: >-
+          scripts/cloudflare-domain.sh attach
+          "website-pr-${{ github.event.pull_request.number }}.$ZONE_NAME"
+          "pr-${{ github.event.pull_request.number }}.$PAGES_PROJECT.pages.dev"
+      - if: env.HAS_CLOUDFLARE == 'true' && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: ${{ needs.build.outputs.url }}
+        with:
+          script: |
+            const marker = '<!-- website-preview -->';
+            const body = `${marker}\nWebsite preview for ${context.payload.pull_request.head.sha.slice(0, 7)}: ${process.env.PREVIEW_URL}\n\nA new hostname can take a few minutes to get its certificate.`;
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+            const existing = comments.find(c => c.body?.startsWith(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
+
+  cleanup-preview:
+    if: github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - if: env.HAS_CLOUDFLARE == 'true'
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: scripts
+      - if: env.HAS_CLOUDFLARE == 'true'
+        run: scripts/cloudflare-domain.sh detach "website-pr-${{ github.event.pull_request.number }}.$ZONE_NAME"

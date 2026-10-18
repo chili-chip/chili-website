@@ -55,7 +55,44 @@ Embed a game (its web build is usually hosted on GitHub Pages of the game's repo
 
 ## Deploy
 
-Every push to `main` runs `.github/workflows/pages.yml`. It builds the site with Hugo 0.164.0 extended and publishes it to GitHub Pages at https://chilichip.eu. Pull requests run the same build without deploying, so a broken build shows up as a failed **build** check on the PR. You can also start the workflow by hand from the Actions tab (`workflow_dispatch`).
+`.github/workflows/pages.yml` builds the site with Hugo 0.164.0 extended and deploys it. We are moving the site from GitHub Pages to Cloudflare Pages ([#69](https://github.com/chili-chip/chili-website/issues/69)). Until the DNS move, both run.
+
+| Event | What happens | URL |
+| --- | --- | --- |
+| Push to `main` | Deploy to GitHub Pages (live site) | https://chilichip.eu |
+| Push to `main` | Deploy to the `chili-website` Cloudflare Pages project, production branch | https://chilichip.eu after the DNS move |
+| Pull request #N | Build, deploy a preview, post the link as a PR comment | https://website-pr-N.chilichip.eu |
+| Pull request closed | Remove the preview hostname | - |
+| Manual (`workflow_dispatch`) | Same as a push to `main` | - |
+
+A failed build shows up as a failed **build** check on the PR. Previews are built with their own base URL, so links stay on the preview. Pull requests from forks and Dependabot get no secrets, so they only build.
+
+```mermaid
+flowchart LR
+  push[push to main] --> build[build: hugo]
+  pr[pull request] --> build
+  build --> gh[deploy-github-pages<br/>until the DNS move]
+  build --> cf[deploy-cloudflare]
+  cf -->|main| prod[chilichip.eu]
+  cf -->|PR #N| prev[website-pr-N.chilichip.eu]
+```
+
+### Setup (once)
+
+1. Create a Cloudflare API token with **Account > Cloudflare Pages > Edit**, **Zone > DNS > Edit** and **Zone > Zone > Read** on `chilichip.eu`. Add it as the secret `CLOUDFLARE_API_TOKEN`, plus `CLOUDFLARE_ACCOUNT_ID` (org secrets, shared by all sites in #69). Until both exist, the Cloudflare jobs are skipped.
+2. The first run creates the `chili-website` Pages project. `scripts/cloudflare-domain.sh` adds each preview hostname as a custom domain and creates its proxied CNAME.
+
+### Move chilichip.eu to Cloudflare Pages
+
+Do this once a preview works. The `chilichip.eu` zone is already on Cloudflare; today it proxies to GitHub Pages.
+
+1. Open a PR and check its preview at https://website-pr-N.chilichip.eu: home page, a post, a game page, the docs.
+2. Merge it, so the `main` build is on the Pages project.
+3. In **DNS > Records** for `chilichip.eu`, note the current `chilichip.eu` and `www` records, for a rollback. Then open **Workers & Pages > chili-website > Custom domains** and add `chilichip.eu` (and `www.chilichip.eu` if it has a record today). Cloudflare asks to replace the apex records that point at GitHub Pages; accept.
+4. Check https://chilichip.eu: the response headers no longer contain `x-github-request-id`.
+5. In a follow-up PR, delete the `deploy-github-pages` job and the `upload-pages-artifact` step. Then turn off GitHub Pages in the repo settings and delete the `github-pages` environment.
+
+To roll back, remove `chilichip.eu` from the Pages project and restore the records you noted in step 3. The `deploy-github-pages` job keeps GitHub Pages up to date until step 5.
 
 ## Updating the theme
 
