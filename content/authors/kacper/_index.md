@@ -1,6 +1,6 @@
 ---
-title: "Kacper Ochnik"
-description: "Posts by Kacper Ochnik, who builds VGC Zero, the Game SDK and the chili platform."
+title: "Kacper Akdağ-Ochnik"
+description: "Posts by Kacper Akdağ-Ochnik, chilichip founder"
 ---
 
-Kacper builds VGC Zero, the Game SDK and the chili platform. These are his posts.
+Kacper is the founder of chilichip. These are his posts.
