@@ -33,6 +33,7 @@ If the build fails with a theme error, the submodule is missing or out of date: 
 | --- | --- |
 | `content/posts/<slug>/index.md` | Blog posts. Images sit next to `index.md` in the same folder (`featured.png` is the cover). Set `authors: ["<id>"]` in the front matter; ids are files in `data/authors/`. |
 | `content/docs/` | Documentation: `game-sdk/` (quickstart and API), `bitsy/`, `vgc-zero/`. |
+| `content/about/index.md` | The About page: who we are and a short bio per team member. Linked from the top menu and the footer (`menus.en.toml`). Add a new team member here and in `data/authors/`. |
 | `content/games/<game>/index.md` | One page per game. The playable web build is embedded with the `game-iframe` shortcode (below). |
 | `data/authors/<id>.json` | Post authors (name, bio, links), see [Blowfish: Multiple Authors](https://blowfish.page/docs/multi-author/). |
 | `layouts/shortcodes/` | Our own shortcodes: `game-iframe`, `screenshot`. |
