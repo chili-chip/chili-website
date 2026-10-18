@@ -50,7 +50,7 @@ jobs:
           HUGO_ENV: production
         run: hugo -d ./public --baseURL "${{ github.event_name == 'pull_request' && '/' || 'https://chilichip.eu' }}"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: site
           path: public/
@@ -91,7 +91,7 @@ jobs:
       - if: env.HAS_CLOUDFLARE != 'true'
         run: echo "::notice::Cloudflare secrets are not set; skipping the Cloudflare deploy."
       - if: env.HAS_CLOUDFLARE == 'true'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: site
           path: public
