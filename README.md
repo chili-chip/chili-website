@@ -55,17 +55,16 @@ Embed a game (its web build is usually hosted on GitHub Pages of the game's repo
 
 ## Deploy
 
-`.github/workflows/pages.yml` builds the site with Hugo 0.164.0 extended and deploys it. We are moving the site from GitHub Pages to Cloudflare Pages ([#69](https://github.com/chili-chip/chili-website/issues/69)). Until the DNS move, both run.
+`.github/workflows/pages.yml` builds the site with Hugo 0.164.0 extended and deploys it to the `chili-website` Cloudflare Pages project with [Direct Upload](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/) (`cloudflare/wrangler-action`). We are moving the site from GitHub Pages to Cloudflare Pages ([#69](https://github.com/chili-chip/chili-website/issues/69)). Until the DNS move, `main` deploys to both.
 
 | Event | What happens | URL |
 | --- | --- | --- |
 | Push to `main` | Deploy to GitHub Pages (live site) | https://chilichip.eu |
-| Push to `main` | Deploy to the `chili-website` Cloudflare Pages project, production branch | https://chilichip.eu after the DNS move |
-| Pull request #N | Build, deploy a preview, post the link as a PR comment | https://website-pr-N.chilichip.eu |
-| Pull request closed | Remove the preview hostname | - |
+| Push to `main` | Deploy to Cloudflare Pages, production | https://chilichip.eu after the DNS move |
+| Pull request | Build, deploy a preview of the PR branch | shown under **Deployments** on the PR |
 | Manual (`workflow_dispatch`) | Same as a push to `main` | - |
 
-A failed build shows up as a failed **build** check on the PR. Previews are built with their own base URL, so links stay on the preview. Pull requests from forks and Dependabot get no secrets, so they only build.
+A failed build shows up as a failed **build** check on the PR. Previews are built with root-relative links, so they work on the preview hostname. Pull requests from forks and Dependabot get no secrets, so they only build.
 
 ```mermaid
 flowchart LR
@@ -73,20 +72,22 @@ flowchart LR
   pr[pull request] --> build
   build --> gh[deploy-github-pages<br/>until the DNS move]
   build --> cf[deploy-cloudflare]
-  cf -->|main| prod[chilichip.eu]
-  cf -->|PR #N| prev[website-pr-N.chilichip.eu]
+  cf -->|main| prod[production]
+  cf -->|PR branch| prev[preview]
 ```
+
+Images are served as they are (`disableImageOptimization` in `config/_default/params.toml`). Blowfish would upscale the game GIFs to 1200 px and make files over the 25 MiB Pages limit. Keep new images small before you add them.
 
 ### Setup (once)
 
-1. Create a Cloudflare API token with **Account > Cloudflare Pages > Edit**, **Zone > DNS > Edit** and **Zone > Zone > Read** on `chilichip.eu`. Add it as the secret `CLOUDFLARE_API_TOKEN`, plus `CLOUDFLARE_ACCOUNT_ID` (org secrets, shared by all sites in #69). Until both exist, the Cloudflare jobs are skipped.
-2. The first run creates the `chili-website` Pages project. `scripts/cloudflare-domain.sh` adds each preview hostname as a custom domain and creates its proxied CNAME.
+1. Create a Cloudflare API token with **Account > Cloudflare Pages > Edit**. Add it as the secret `CLOUDFLARE_API_TOKEN`, plus `CLOUDFLARE_ACCOUNT_ID`. Until both exist, the Cloudflare deploy is skipped.
+2. The `chili-website` Pages project exists, with `main` as its production branch. To recreate it: `npx wrangler pages project create chili-website --production-branch=main`.
 
 ### Move chilichip.eu to Cloudflare Pages
 
 Do this once a preview works. The `chilichip.eu` zone is already on Cloudflare; today it proxies to GitHub Pages.
 
-1. Open a PR and check its preview at https://website-pr-N.chilichip.eu: home page, a post, a game page, the docs.
+1. Open a PR and check its preview (link under **Deployments** on the PR): home page, a post, a game page, the docs.
 2. Merge it, so the `main` build is on the Pages project.
 3. In **DNS > Records** for `chilichip.eu`, note the current `chilichip.eu` and `www` records, for a rollback. Then open **Workers & Pages > chili-website > Custom domains** and add `chilichip.eu` (and `www.chilichip.eu` if it has a record today). Cloudflare asks to replace the apex records that point at GitHub Pages; accept.
 4. Check https://chilichip.eu: the response headers no longer contain `x-github-request-id`.

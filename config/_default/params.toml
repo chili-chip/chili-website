@@ -4,6 +4,9 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 defaultBackgroundImage = "img/background.png"
+# Serve images as they are. Blowfish upscales the 256 px game GIFs to 1200 px,
+# which makes 27 MB files (Cloudflare Pages rejects files over 25 MiB).
+disableImageOptimization = true
 mainSections = [
   "posts",
   "docs",
