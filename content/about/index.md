@@ -31,9 +31,9 @@ Everything we make is open source. The code, the boards and the docs are all on 
 
 **Founder and head engineer.**
 
-Kacper started chilichip and builds it from the hardware up. He designs the console boards, writes the Game SDK and the firmware, and makes the retro games that run on VGC Zero. He also works on the chili platform and on citsy, our Bitsy game engine. If a pixel is out of place on a 128 × 128 screen, Kacper will find it.
+Kacper started chilichip and builds it from the hardware up. He designs the console boards, writes the Game SDK and the firmware, and makes the retro games that run on chilichip. He also works on the chili platform and on citsy, our Bitsy game engine.
 
-[GitHub](https://github.com/TeriyakiGod) · [his posts](/authors/kacper/)
+[GitHub](https://github.com/TeriyakiGod)
 
 ### Paweł Frankowski
 
@@ -42,6 +42,12 @@ Kacper started chilichip and builds it from the hardware up. He designs the cons
 Paweł leads the software side. He keeps the chili platform running in the cloud: the backend, the marketplace and the store. He reviews most of the code that ships, across the platform, the creator and this website. When something breaks at night, Paweł is usually the one who already knows why.
 
 [GitHub](https://github.com/pablolambo)
+
+### Eli
+
+**Hardware and design engineer.**
+
+Eli loves doing hardware, artsy games and fun concepts.
 
 ## Get in touch
 
