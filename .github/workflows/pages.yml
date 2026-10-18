@@ -1,12 +1,11 @@
 # Build the Hugo site, then deploy it to Cloudflare Pages with Direct Upload
 # (https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/).
 #
-#   push to main     -> chili-website production; GitHub Pages too, until chilichip.eu moves
+#   push to main     -> chili-website production (https://chilichip.eu)
 #   pull request     -> chili-website preview for the PR branch (link in the PR's deployments)
 #
 # The Cloudflare deploy is skipped until the CLOUDFLARE_API_TOKEN and
-# CLOUDFLARE_ACCOUNT_ID secrets exist. Moving chilichip.eu itself to
-# Cloudflare Pages is a manual step, see README "Deploy" and issue #69.
+# CLOUDFLARE_ACCOUNT_ID secrets exist.
 name: Build and deploy
 
 on:
@@ -20,7 +19,7 @@ permissions:
 
 # One run per pull request or for main; a pull request never cancels a main deploy
 concurrency:
-  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'pages' }}
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || 'main' }}
   cancel-in-progress: true
 
 defaults:
@@ -55,27 +54,6 @@ jobs:
           name: site
           path: public/
           retention-days: 30
-
-      - name: Upload GitHub Pages artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./public
-
-  # Keeps https://chilichip.eu live until its DNS moves to Cloudflare Pages; remove it after the move
-  deploy-github-pages:
-    if: github.event_name != 'pull_request'
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: https://chilichip.eu
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v5
 
   deploy-cloudflare:
     needs: build
