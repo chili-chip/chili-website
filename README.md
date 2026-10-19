@@ -40,7 +40,7 @@ If the build fails with a theme error, the submodule is missing or out of date: 
 | `layouts/shortcodes/` | Our own shortcodes: `game-iframe`, `screenshot`, `team` and `team-member` (About page cards). |
 | `archetypes/` | Templates used by `hugo new`. |
 | `config/_default/` | Site config: `hugo.toml` (base URL, taxonomies, outputs), `params.toml` (theme options), `languages.en.toml` (site title, description, site-wide author), `menus.en.toml`, `markup.toml` (Markdown and syntax highlighting), `module.toml` (supported Hugo version). |
-| `assets/` | Files Hugo processes: `img/` (logo, `social.jpg` share image), `icons/` (extra icons for the landing page), `css/custom.css` (site styles) and `js/` (`game-iframe-focus.js`). |
+| `assets/` | Files Hugo processes: `img/` (logo, `social.jpg` share image), `icons/` (extra [Font Awesome Free](https://fontawesome.com/search?ic=free) 6.7.2 icons, CC BY 4.0, the same set Blowfish ships; add one by downloading its SVG from `@fortawesome/fontawesome-free/svgs/` and giving the `<path>` `fill="currentColor"`), `css/custom.css` (site styles) and `js/` (`game-iframe-focus.js`). |
 | `static/` | Files copied to the site as they are: favicons and app icons. |
 
 New post:
