@@ -6,6 +6,7 @@
 
 :root {
   --cc-radius: 1.25rem;
+  --cc-grid-alpha: 0.07;
   --cc-text: rgb(var(--color-neutral-900));
   --cc-muted: rgb(var(--color-neutral-600));
   --cc-border: rgba(var(--color-neutral-300), 0.8);
@@ -17,6 +18,7 @@
 }
 
 html.dark {
+  --cc-grid-alpha: 0.12;
   --cc-text: rgb(var(--color-neutral-50));
   --cc-muted: rgb(var(--color-neutral-400));
   --cc-border: rgba(var(--color-neutral-600), 0.6);
@@ -27,30 +29,222 @@ html.dark {
   --cc-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
 }
 
-/* Warm glow behind the top of the landing page. Positioned against the
-   viewport so it spans the full width without causing horizontal scroll. */
-.cc-glow {
+/* ---------------------------------------------------------------------------
+ * Site-wide look: shared by every page, so the landing page and the rest of
+ * the site read as one design.
+ * ------------------------------------------------------------------------- */
+
+/* Warm glow and faint grid behind the top of every page. Positioned against
+   the viewport so it spans the full width without causing horizontal scroll. */
+body::before {
+  content: "";
   position: absolute;
   inset: 0 0 auto 0;
   height: 1100px;
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(60% 50% at 75% 20%, rgba(var(--color-secondary-500), 0.22), transparent 70%),
-    radial-gradient(50% 45% at 15% 10%, rgba(var(--color-primary-500), 0.18), transparent 70%);
+    radial-gradient(60% 50% at 75% 20%, rgba(var(--color-secondary-500), 0.2), transparent 70%),
+    radial-gradient(50% 45% at 15% 10%, rgba(var(--color-primary-500), 0.16), transparent 70%);
 }
 
-.cc-glow::after {
+body::after {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 0 0 auto 0;
+  height: 1100px;
+  z-index: -1;
+  pointer-events: none;
   background-image:
-    linear-gradient(rgba(var(--color-neutral-500), 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--color-neutral-500), 0.12) 1px, transparent 1px);
+    linear-gradient(rgba(var(--color-neutral-500), var(--cc-grid-alpha)) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--color-neutral-500), var(--cc-grid-alpha)) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(70% 60% at 50% 25%, #000 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(70% 60% at 50% 25%, #000 30%, transparent 100%);
 }
+
+::selection {
+  background: rgba(var(--color-secondary-500), 0.3);
+}
+
+/* Page titles: same heavy, tight headline as the landing page */
+#main-content h1 {
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+#main-content .prose :where(h2, h3) {
+  letter-spacing: -0.015em;
+}
+
+#main-content .prose h2 {
+  font-weight: 800;
+}
+
+/* Breadcrumbs read as the landing page's small kicker */
+#main-content ol.text-sm,
+#main-content ol.text-sm a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Theme cards (lists, related posts, recent articles) match .cc-card */
+.article-link--card,
+.article-link--related {
+  border-radius: var(--cc-radius) !important;
+  border-color: var(--cc-border) !important;
+  background: var(--cc-surface) !important;
+  box-shadow: var(--cc-shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-link--card:hover,
+.article-link--related:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--color-primary-500), 0.6) !important;
+  background: var(--cc-surface-hover) !important;
+}
+
+/* Pixel art stays crisp when the theme scales it */
+.thumbnail_card img[src$=".gif"],
+.thumbnail img[src$=".gif"],
+#main-content .prose img[src$=".gif"],
+.single_hero_round[src$=".gif"] {
+  image-rendering: pixelated;
+}
+
+/* Button shortcode: the landing page's pill button */
+#main-content .prose a[role="button"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px !important;
+  padding: 0.65rem 1.25rem;
+  font-weight: 700;
+  color: #fff !important;
+  background: linear-gradient(135deg, rgb(var(--color-secondary-600)), rgb(var(--color-primary-600))) !important;
+  box-shadow: 0 10px 24px -10px rgba(var(--color-secondary-600), 0.7);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#main-content .prose a[role="button"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px -10px rgba(var(--color-secondary-600), 0.85);
+}
+
+/* Embedded games sit in a rounded frame like the landing page's hero */
+.game-embed {
+  overflow: hidden;
+  border-radius: var(--cc-radius);
+  border: 1px solid var(--cc-border);
+  box-shadow: var(--cc-shadow);
+  background: #0c0a09;
+}
+
+.game-embed iframe {
+  display: block;
+  max-width: 100%;
+}
+
+.game-embed [data-game-focus-btn] {
+  border: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: blur(2px);
+}
+
+/* Images inside articles */
+#main-content .prose figure img,
+#main-content .prose > img {
+  border-radius: 0.9rem;
+}
+
+/* Big article hero image: rounded like the rest of the cards */
+.single_hero_round {
+  border-radius: var(--cc-radius);
+}
+
+/* Footer: a top rule, as on the landing page */
+#site-footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--cc-border);
+}
+
+/* About page team cards */
+.cc-team {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .cc-team {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.cc-member {
+  padding: 1.5rem;
+}
+
+.cc-member:hover {
+  transform: none;
+}
+
+.cc-member-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cc-avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, rgb(var(--color-secondary-500)), rgb(var(--color-primary-500)));
+}
+
+.cc-member h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--cc-text);
+}
+
+.cc-member-role {
+  margin: 0.1rem 0 0 !important;
+  font-size: 0.9rem !important;
+  font-weight: 600;
+  color: var(--cc-accent) !important;
+}
+
+.cc-member-bio {
+  margin-top: 1rem;
+}
+
+.cc-member-bio p {
+  margin: 0;
+}
+
+.cc-member .cc-more {
+  padding-top: 1rem;
+}
+
+.cc-member .icon svg {
+  height: 1em;
+  width: 1em;
+}
+
+/* ---------------------------------------------------------------------------
+ * Landing page
+ * ------------------------------------------------------------------------- */
 
 .cc-landing {
   color: var(--cc-text);

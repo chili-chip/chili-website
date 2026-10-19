@@ -3,7 +3,6 @@ defaultAppearance = "dark"
 autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
-defaultBackgroundImage = "img/background.png"
 # Share image for pages without their own featured image (1200x630)
 defaultSocialImage = "img/social.jpg"
 copyright = "© { year } chilichip. Open source hardware and software."
@@ -42,7 +41,7 @@ showDate = true
 showDateUpdated = false
 showAuthor = true
 showHero = true
-heroStyle = "thumbAndBackground"
+heroStyle = "big"
 layoutBackgroundHeaderSpace = false
 showRelatedContent = true
 relatedContentLimit = 3
@@ -79,8 +78,8 @@ showCards = false
 groupByYear = true
 cardView = true
 cardViewScreenWidth = false
-showHero = true
-heroStyle = "background"
+showHero = false
+heroStyle = "basic"
 layoutBackgroundHeaderSpace = false
 
 [sitemap]

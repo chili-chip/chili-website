@@ -5,7 +5,6 @@ lastmod: 2026-10-15
 draft: false
 description: "VGC Zero is a tiny open hardware & open source handheld (targeting 2027) built for playing and making games—right from your keychain."
 tags: ["vgc-zero", "console", "keychain", "portable", "gaming", "open-source"]
-heroStyle: thumbAndBackground
 ---
 
 # VGC Zero: The Ultra-Portable Keychain Video Game Console

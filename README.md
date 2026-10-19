@@ -34,13 +34,13 @@ If the build fails with a theme error, the submodule is missing or out of date: 
 | `content/_index.md` | The landing page copy (hero, stats, products, steps, section titles) in its front matter. The page itself is `layouts/partials/home/custom.html`, styled by `assets/css/custom.css`; its games and blog posts come from `content/games/` and `content/posts/`. |
 | `content/posts/<slug>/index.md` | Blog posts. Images sit next to `index.md` in the same folder (`featured.png` is the cover). Set `authors: ["<id>"]` in the front matter; ids are files in `data/authors/`. |
 | `content/docs/` | Documentation: `game-sdk/` (quickstart and API), `bitsy/`, `vgc-zero/`. |
-| `content/about/index.md` | The About page: who we are and a short bio per team member. Linked from the top menu and the footer (`menus.en.toml`). Add a new team member here and in `data/authors/`. |
+| `content/about/index.md` | The About page: who we are and a short bio per team member. Linked from the top menu and the footer (`menus.en.toml`). Team members are cards made with the `team` and `team-member` shortcodes; add a new one there and in `data/authors/`. |
 | `content/games/<game>/index.md` | One page per game. The playable web build is embedded with the `game-iframe` shortcode (below). |
 | `data/authors/<id>.json` | Post authors (name, bio, links), see [Blowfish: Multiple Authors](https://blowfish.page/docs/multi-author/). |
-| `layouts/shortcodes/` | Our own shortcodes: `game-iframe`, `screenshot`. |
+| `layouts/shortcodes/` | Our own shortcodes: `game-iframe`, `screenshot`, `team` and `team-member` (About page cards). |
 | `archetypes/` | Templates used by `hugo new`. |
 | `config/_default/` | Site config: `hugo.toml` (base URL, taxonomies, outputs), `params.toml` (theme options), `languages.en.toml` (site title, description, site-wide author), `menus.en.toml`, `markup.toml` (Markdown and syntax highlighting), `module.toml` (supported Hugo version). |
-| `assets/` | Files Hugo processes: `img/` (logo, background, `social.jpg` share image), `icons/` (extra icons for the landing page), `css/custom.css` (site styles) and `js/` (`game-iframe-focus.js`). |
+| `assets/` | Files Hugo processes: `img/` (logo, `social.jpg` share image), `icons/` (extra icons for the landing page), `css/custom.css` (site styles) and `js/` (`game-iframe-focus.js`). |
 | `static/` | Files copied to the site as they are: favicons and app icons. |
 
 New post:
