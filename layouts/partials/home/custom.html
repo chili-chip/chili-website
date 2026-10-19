@@ -1,0 +1,205 @@
+{{/*
+  chilichip landing page (params.toml: homepage.layout = "custom").
+  Copy lives in the front matter of content/_index.md; games and posts are
+  pulled from their sections. Styles are in assets/css/custom.css (cc-*).
+*/}}
+{{ $p := .Params }}
+{{ $hero := $p.hero }}
+
+<div class="cc-glow" aria-hidden="true"></div>
+
+<div class="cc-landing">
+  {{/* Hero */}}
+  <section class="cc-hero" aria-labelledby="cc-hero-title">
+    <div class="cc-hero-copy">
+      {{ with $hero.eyebrow }}
+        <p class="cc-eyebrow"><span class="cc-dot" aria-hidden="true"></span>{{ . }}</p>
+      {{ end }}
+      <h1 id="cc-hero-title" class="cc-hero-title">
+        {{ $hero.title }}
+        {{ with $hero.titleAccent }}<span class="cc-accent">{{ . }}</span>{{ end }}
+      </h1>
+      <p class="cc-lead">{{ $hero.lead }}</p>
+      <div class="cc-actions">
+        {{ with $hero.primary }}
+          <a class="cc-btn cc-btn-primary" {{ partial "cc-link-attrs.html" .url | safeHTMLAttr }}>
+            {{ .label }}
+            {{ partial "icon.html" "arrow-right" }}
+          </a>
+        {{ end }}
+        {{ with $hero.secondary }}
+          <a class="cc-btn cc-btn-ghost" {{ partial "cc-link-attrs.html" .url | safeHTMLAttr }}>
+            {{ partial "icon.html" "play" }}
+            {{ .label }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ with site.GetPage $hero.imagePage }}
+      {{ with .Resources.Get $hero.image }}
+        {{ $img := .Resize "1000x webp q85" }}
+        <figure class="cc-hero-media">
+          <div class="cc-hero-stage">
+            <img
+              src="{{ $img.RelPermalink }}"
+              width="{{ $img.Width }}"
+              height="{{ $img.Height }}"
+              alt="{{ $hero.imageAlt }}"
+              loading="eager"
+              fetchpriority="high"
+              class="nozoom">
+          </div>
+          {{ with $hero.imageCaption }}<figcaption>{{ . }}</figcaption>{{ end }}
+        </figure>
+      {{ end }}
+    {{ end }}
+  </section>
+
+  {{/* Key facts */}}
+  {{ with $p.stats }}
+    <section class="cc-stats" aria-label="chilichip in numbers">
+      {{ range . }}
+        <div class="cc-stat">
+          <span class="cc-stat-value">{{ .value }}</span>
+          <span class="cc-stat-label">{{ .label }}</span>
+        </div>
+      {{ end }}
+    </section>
+  {{ end }}
+
+  {{/* What we make */}}
+  {{ with $p.products }}
+    <section class="cc-section" aria-labelledby="cc-products-title">
+      <header class="cc-section-head">
+        <p class="cc-kicker">What we make</p>
+        <h2 id="cc-products-title">{{ .title }}</h2>
+        {{ with .lead }}<p>{{ . }}</p>{{ end }}
+      </header>
+      <div class="cc-products">
+        {{ range .items }}
+          <a class="cc-card cc-product" {{ partial "cc-link-attrs.html" .url | safeHTMLAttr }}>
+            <div class="cc-product-top">
+              <span class="cc-icon-tile">{{ partial "icon.html" .icon }}</span>
+              <span class="cc-tag">{{ .tag }}</span>
+            </div>
+            <h3>{{ .name }}</h3>
+            <p>{{ .text }}</p>
+            <span class="cc-more">{{ .linkLabel }} {{ partial "icon.html" "arrow-right" }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{/* How it works */}}
+  {{ with $p.steps }}
+    <section class="cc-section" aria-labelledby="cc-steps-title">
+      <header class="cc-section-head">
+        <p class="cc-kicker">How it works</p>
+        <h2 id="cc-steps-title">{{ .title }}</h2>
+      </header>
+      <ol class="cc-steps">
+        {{ range $i, $s := .items }}
+          <li class="cc-step">
+            <span class="cc-step-num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</span>
+            <h3>{{ $s.name }}</h3>
+            <p>{{ $s.text }}</p>
+            <a class="cc-more" {{ partial "cc-link-attrs.html" $s.url | safeHTMLAttr }}>{{ $s.linkLabel }} {{ partial "icon.html" "arrow-right" }}</a>
+          </li>
+        {{ end }}
+      </ol>
+    </section>
+  {{ end }}
+
+  {{/* Games */}}
+  {{ with $p.games }}
+    {{ $section := site.GetPage "/games" }}
+    {{ $games := first (.count | default 6) $section.RegularPages.ByDate.Reverse }}
+    {{ if $games }}
+      <section class="cc-section" aria-labelledby="cc-games-title">
+        <header class="cc-section-head cc-section-head-row">
+          <div>
+            <p class="cc-kicker">Games</p>
+            <h2 id="cc-games-title">{{ .title }}</h2>
+            {{ with .lead }}<p>{{ . }}</p>{{ end }}
+          </div>
+          <a class="cc-btn cc-btn-ghost cc-btn-sm" href="{{ $section.RelPermalink }}">All games {{ partial "icon.html" "arrow-right" }}</a>
+        </header>
+        <div class="cc-games">
+          {{ range $games }}
+            <a class="cc-card cc-game" href="{{ .RelPermalink }}">
+              <div class="cc-game-art">
+                {{ with .Resources.GetMatch "featured*" }}
+                  <img src="{{ .RelPermalink }}" alt="" loading="lazy" decoding="async" class="nozoom"
+                    {{ with .Width }}width="{{ . }}"{{ end }} {{ with .Height }}height="{{ . }}"{{ end }}>
+                {{ end }}
+                <span class="cc-play-badge">{{ partial "icon.html" "play" }} Play</span>
+              </div>
+              <div class="cc-game-body">
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Description }}</p>
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+
+  {{/* Latest posts */}}
+  {{ with $p.posts }}
+    {{ $section := site.GetPage "/posts" }}
+    {{ $posts := first (.count | default 3) $section.RegularPages.ByDate.Reverse }}
+    {{ if $posts }}
+      <section class="cc-section" aria-labelledby="cc-posts-title">
+        <header class="cc-section-head cc-section-head-row">
+          <div>
+            <p class="cc-kicker">Blog</p>
+            <h2 id="cc-posts-title">{{ .title }}</h2>
+            {{ with .lead }}<p>{{ . }}</p>{{ end }}
+          </div>
+          <a class="cc-btn cc-btn-ghost cc-btn-sm" href="{{ $section.RelPermalink }}">All posts {{ partial "icon.html" "arrow-right" }}</a>
+        </header>
+        <div class="cc-posts">
+          {{ range $posts }}
+            <a class="cc-card cc-post" href="{{ .RelPermalink }}">
+              <div class="cc-post-art">
+                {{ with .Resources.GetMatch "featured*" }}
+                  {{ $img := . }}
+                  {{ if ne .MediaType.SubType "gif" }}{{ $img = .Fill "720x405 Center webp q80" }}{{ end }}
+                  <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy" decoding="async" class="nozoom">
+                {{ end }}
+              </div>
+              <div class="cc-post-body">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format site.Params.dateFormat }}</time>
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Description }}</p>
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+
+  {{/* Community call to action */}}
+  {{ with $p.cta }}
+    <section class="cc-cta" aria-labelledby="cc-cta-title">
+      <div>
+        <h2 id="cc-cta-title">{{ .title }}</h2>
+        <p>{{ .text }}</p>
+      </div>
+      <div class="cc-actions">
+        {{ range site.Params.author.links }}
+          {{ with .github }}
+            <a class="cc-btn cc-btn-light" href="{{ . }}" target="_blank" rel="noopener">{{ partial "icon.html" "github" }} GitHub</a>
+          {{ end }}
+          {{ with .discord }}
+            <a class="cc-btn cc-btn-outline" href="{{ . }}" target="_blank" rel="noopener">{{ partial "icon.html" "discord" }} Join Discord</a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+</div>

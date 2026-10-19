@@ -1,0 +1,6 @@
+{{- /* href (plus target/rel for external links) for a landing page URL. */ -}}
+{{- if or (strings.HasPrefix . "http://") (strings.HasPrefix . "https://") -}}
+  href="{{ . }}" target="_blank" rel="noopener"
+{{- else -}}
+  href="{{ . | relLangURL }}"
+{{- end -}}
