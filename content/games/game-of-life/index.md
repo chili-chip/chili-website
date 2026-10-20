@@ -5,7 +5,6 @@ draft: false
 description: "Play Conway's Game of Life, the classic cellular automaton, and explore how simple rules create complex patterns."
 summary: "Create and observe evolving cell patterns in Conway's Game of Life. Experiment with the grid and discover how each generation changes according to simple rules."
 tags: ["game", "automaton", "simulation"]
-heroStyle: background
 ---
 
 {{< lead >}}

@@ -4,7 +4,7 @@ Source of [chilichip.eu](https://chilichip.eu): the blog, the docs and the game 
 
 ## Requirements
 
-- **Hugo extended, 0.164.0 to 0.167.0.** CI builds with 0.164.0 (`.github/workflows/pages.yml`). The lower bound comes from `config/_default/module.toml` (`min = "0.164.0"`), the upper bound from the pinned Blowfish theme (`max = "0.167.0"` in `themes/blowfish/config.toml`); outside that range Hugo warns that the theme is not compatible. Get it from the [Hugo releases page](https://github.com/gohugoio/hugo/releases) (`hugo_extended_0.164.0_*`), or see [Install Hugo](https://gohugo.io/installation/). Check with `hugo version`: the output must contain `+extended`.
+- **Hugo extended 0.167.0.** CI builds with 0.167.0 (`.github/workflows/pages.yml`). The lower bound comes from `config/_default/module.toml` (`min = "0.167.0"`), the upper bound from the pinned Blowfish theme v3.9.0 (`max = "0.167.0"` in `themes/blowfish/config.toml`); outside that range Hugo warns that the theme is not compatible. Newer Hugo releases build the site too, but wait for a Blowfish release that supports them before moving CI. Get it from the [Hugo releases page](https://github.com/gohugoio/hugo/releases) (`hugo_extended_0.167.0_*`), or see [Install Hugo](https://gohugo.io/installation/). Check with `hugo version`: the output must contain `+extended`.
 - **Git**, to fetch the theme submodule.
 - **npm** (optional), only as a shortcut for `npm run dev`.
 
@@ -31,15 +31,16 @@ If the build fails with a theme error, the submodule is missing or out of date: 
 
 | Path | What lives there |
 | --- | --- |
+| `content/_index.md` | The landing page copy (hero, stats, products, steps, section titles) in its front matter. The page itself is `layouts/partials/home/custom.html`, styled by `assets/css/custom.css`; its games and blog posts come from `content/games/` and `content/posts/`. |
 | `content/posts/<slug>/index.md` | Blog posts. Images sit next to `index.md` in the same folder (`featured.png` is the cover). Set `authors: ["<id>"]` in the front matter; ids are files in `data/authors/`. |
 | `content/docs/` | Documentation: `game-sdk/` (quickstart and API), `bitsy/`, `vgc-zero/`. |
-| `content/about/index.md` | The About page: who we are and a short bio per team member. Linked from the top menu and the footer (`menus.en.toml`). Add a new team member here and in `data/authors/`. |
+| `content/about/index.md` | The About page: who we are and a short bio per team member. Linked from the top menu and the footer (`menus.en.toml`). Team members are cards made with the `team` and `team-member` shortcodes; add a new one there and in `data/authors/`. |
 | `content/games/<game>/index.md` | One page per game. The playable web build is embedded with the `game-iframe` shortcode (below). |
 | `data/authors/<id>.json` | Post authors (name, bio, links), see [Blowfish: Multiple Authors](https://blowfish.page/docs/multi-author/). |
-| `layouts/shortcodes/` | Our own shortcodes: `game-iframe`, `screenshot`. |
+| `layouts/shortcodes/` | Our own shortcodes: `game-iframe`, `screenshot`, `team` and `team-member` (About page cards). |
 | `archetypes/` | Templates used by `hugo new`. |
 | `config/_default/` | Site config: `hugo.toml` (base URL, taxonomies, outputs), `params.toml` (theme options), `languages.en.toml` (site title, description, site-wide author), `menus.en.toml`, `markup.toml` (Markdown and syntax highlighting), `module.toml` (supported Hugo version). |
-| `assets/` | Files Hugo processes: `img/` (logo, background) and `js/` (`game-iframe-focus.js`). |
+| `assets/` | Files Hugo processes: `img/` (logo, `social.jpg` share image), `icons/` (extra [Font Awesome Free](https://fontawesome.com/search?ic=free) 6.7.2 icons, CC BY 4.0, the same set Blowfish ships; add one by downloading its SVG from `@fortawesome/fontawesome-free/svgs/` and giving the `<path>` `fill="currentColor"`), `css/custom.css` (site styles) and `js/` (`game-iframe-focus.js`). |
 | `static/` | Files copied to the site as they are: favicons and app icons. |
 
 New post:
@@ -56,7 +57,7 @@ Embed a game (its web build is usually hosted on GitHub Pages of the game's repo
 
 ## Deploy
 
-`.github/workflows/pages.yml` builds the site with Hugo 0.164.0 extended and deploys it to the `chili-website` Cloudflare Pages project with [Direct Upload](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/) (`cloudflare/wrangler-action`). `chilichip.eu` is the project's custom domain.
+`.github/workflows/pages.yml` builds the site with Hugo 0.167.0 extended and deploys it to the `chili-website` Cloudflare Pages project with [Direct Upload](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/) (`cloudflare/wrangler-action`). `chilichip.eu` is the project's custom domain.
 
 | Event | What happens | URL |
 | --- | --- | --- |

@@ -1,7 +1,18 @@
 [[main]]
+identifier = "vgc-zero"
+name = "vgc zero"
+pageRef = "docs/vgc-zero/discover-vgc-zero"
+weight = 1
+
+[[main]]
+name = "games"
+pageRef = "games"
+weight = 2
+
+[[main]]
 name = "docs"
 pageRef = "docs"
-weight = 1
+weight = 3
 
 [[main]]
 name = "game sdk"
@@ -9,6 +20,7 @@ pageRef = "docs/game-sdk"
 parent = "docs"
 
 [[main]]
+identifier = "docs-vgc-zero"
 name = "vgc zero"
 pageRef = "docs/vgc-zero"
 parent = "docs"
@@ -21,36 +33,66 @@ parent = "docs"
 [[main]]
 name = "blog"
 pageRef = "posts"
-weight = 2
-
-[[main]]
-name = "games"
-pageRef = "games"
-weight = 3
+weight = 4
 
 [[main]]
 name = "about"
 pageRef = "about"
-weight = 4
+weight = 5
+
+[[main]]
+name = "platform"
+url = "https://platform.chilichip.eu"
+weight = 6
 
 [[main]]
 identifier = "github"
 pre = "github"
 url = "https://github.com/chili-chip"
-weight = 5
+weight = 7
 
 [[main]]
 identifier = "discord"
 pre = "discord"
 url = "https://discord.gg/xB9sPYKBZc"
-weight = 6
+weight = 8
+
+[[footer]]
+name = "vgc zero"
+pageRef = "docs/vgc-zero/discover-vgc-zero"
+weight = 1
+
+[[footer]]
+name = "games"
+pageRef = "games"
+weight = 2
+
+[[footer]]
+name = "docs"
+pageRef = "docs"
+weight = 3
+
+[[footer]]
+name = "blog"
+pageRef = "posts"
+weight = 4
 
 [[footer]]
 name = "about"
 pageRef = "about"
-weight = 1
+weight = 5
 
 [[footer]]
-name = "tags"
-pageRef = "tags"
-weight = 2
+name = "chili platform"
+url = "https://platform.chilichip.eu"
+weight = 6
+
+[[footer]]
+name = "contact"
+url = "mailto:chilichipelectronics@gmail.com"
+weight = 7
+
+[[footer]]
+name = "rss"
+url = "/index.xml"
+weight = 8

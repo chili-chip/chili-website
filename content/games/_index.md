@@ -1,4 +1,5 @@
 ---
-title: "games"
+title: "Games"
+description: "Games made by the chilichip team and community. Play them in your browser or on VGC Zero."
 ---
-Selection of games created by the chilichip team and community.
+Every game here runs in your browser, on your phone with touch controls, and on VGC Zero. Pick one and press play.

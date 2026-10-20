@@ -3,7 +3,9 @@ defaultAppearance = "dark"
 autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
-defaultBackgroundImage = "img/background.png"
+# Share image for pages without their own featured image (1200x630)
+defaultSocialImage = "img/social.jpg"
+copyright = "© { year } chilichip. Open source hardware and software."
 # Serve images as they are. Blowfish upscales the 256 px game GIFs to 1200 px,
 # which makes 27 MB files (Cloudflare Pages rejects files over 25 MiB).
 disableImageOptimization = true
@@ -22,10 +24,11 @@ showThemeAttribution = false
 showAppearanceSwitcher = true
 showScrollToTop = true
 
+# The landing page is our own layout: layouts/partials/home/custom.html,
+# with its copy in the front matter of content/_index.md.
 [homepage]
-layout = "background"
-homepageImage = "img/background.png"
-showRecent = true
+layout = "custom"
+showRecent = false
 showRecentItems = 9
 showMoreLink = false
 showMoreLinkDest = "/posts"
@@ -38,7 +41,7 @@ showDate = true
 showDateUpdated = false
 showAuthor = true
 showHero = true
-heroStyle = "thumbAndBackground"
+heroStyle = "big"
 layoutBackgroundHeaderSpace = false
 showRelatedContent = true
 relatedContentLimit = 3
@@ -75,8 +78,8 @@ showCards = false
 groupByYear = true
 cardView = true
 cardViewScreenWidth = false
-showHero = true
-heroStyle = "background"
+showHero = false
+heroStyle = "basic"
 layoutBackgroundHeaderSpace = false
 
 [sitemap]
