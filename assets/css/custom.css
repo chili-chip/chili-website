@@ -421,6 +421,32 @@ body::after {
   transform: scale(1.12);
 }
 
+/* 3D console (assets/js/console-stage.js): the canvas replaces the image once the model is ready */
+.cc-hero-stage canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+  touch-action: pan-y;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cc-hero-stage canvas:active {
+  cursor: grabbing;
+}
+
+.cc-hero-stage.is-live canvas {
+  opacity: 1;
+}
+
+.cc-hero-stage.is-live img {
+  visibility: hidden;
+}
+
 .cc-hero-media figcaption {
   margin-top: 0.75rem;
   text-align: center;
