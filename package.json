@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/chili-chip/chili-website/issues"
   },
-  "homepage": "https://chilichip.eu"
+  "homepage": "https://chilichip.eu",
+  "dependencies": {
+    "three": "0.186.1"
+  }
 }

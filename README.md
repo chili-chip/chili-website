@@ -6,7 +6,7 @@ Source of [chilichip.eu](https://chilichip.eu): the blog, the docs and the game 
 
 - **Hugo extended 0.167.0.** CI builds with 0.167.0 (`.github/workflows/pages.yml`). The lower bound comes from `config/_default/module.toml` (`min = "0.167.0"`), the upper bound from the pinned Blowfish theme v3.9.0 (`max = "0.167.0"` in `themes/blowfish/config.toml`); outside that range Hugo warns that the theme is not compatible. Newer Hugo releases build the site too, but wait for a Blowfish release that supports them before moving CI. Get it from the [Hugo releases page](https://github.com/gohugoio/hugo/releases) (`hugo_extended_0.167.0_*`), or see [Install Hugo](https://gohugo.io/installation/). Check with `hugo version`: the output must contain `+extended`.
 - **Git**, to fetch the theme submodule.
-- **npm** (optional), only as a shortcut for `npm run dev`.
+- **Node.js with npm.** `npm ci` installs three.js, which Hugo bundles into the 3D console on the landing page (`assets/js/console-stage.js`). Without it the build fails.
 
 ## Run locally
 
@@ -14,6 +14,7 @@ Source of [chilichip.eu](https://chilichip.eu): the blog, the docs and the game 
 git clone https://github.com/chili-chip/chili-website.git
 cd chili-website
 git submodule update --init   # fetches themes/blowfish
+npm ci                        # installs three.js for the landing page
 npm run dev                   # same as: hugo server --minify -D -E -F
 ```
 
