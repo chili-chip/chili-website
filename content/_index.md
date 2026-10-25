@@ -18,7 +18,8 @@ hero:
   imagePage: "/docs/vgc-zero/discover-vgc-zero"
   image: "render.jpg"
   imageAlt: "A render of the VGC Zero handheld console"
-  imageCaption: "VGC Zero concept render"
+  modelLabel: "3D model of the VGC Zero handheld. Drag to turn it."
+  imageCaption: "VGC Zero 3D model · drag to turn"
 
 stats:
   - value: "2"

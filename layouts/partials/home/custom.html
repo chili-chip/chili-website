@@ -38,7 +38,9 @@
       {{ with .Resources.Get $hero.image }}
         {{ $img := .Resize "1000x webp q85" }}
         <figure class="cc-hero-media">
-          <div class="cc-hero-stage">
+          {{/* The image shows until the 3D model (assets/js/console-stage.js) is ready, and stays when WebGL is unavailable */}}
+          <div class="cc-hero-stage" data-console-stage>
+            <canvas aria-label="{{ $hero.modelLabel | default $hero.imageAlt }}"></canvas>
             <img
               src="{{ $img.RelPermalink }}"
               width="{{ $img.Width }}"
@@ -50,6 +52,9 @@
           </div>
           {{ with $hero.imageCaption }}<figcaption>{{ . }}</figcaption>{{ end }}
         </figure>
+        {{ $opts := dict "minify" hugo.IsProduction "format" "esm" "targetPath" "js/console-stage.js" }}
+        {{ $script := resources.Get "js/console-stage.js" | js.Build $opts | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+        <script type="module" src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
       {{ end }}
     {{ end }}
   </section>
