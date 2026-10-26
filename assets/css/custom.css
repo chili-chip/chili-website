@@ -67,6 +67,12 @@ body::after {
   background: rgba(var(--color-secondary-500), 0.3);
 }
 
+/* Header logo: smaller than the theme's 5rem */
+img.logo {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+}
+
 /* Page titles: same heavy, tight headline as the landing page */
 #main-content h1 {
   font-weight: 900;
