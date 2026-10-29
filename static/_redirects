@@ -1,0 +1,45 @@
+# The Bitsy docs moved to the Chili Creator docs (chili-chip/chili-creator, docs/).
+# Cloudflare Pages reads this file; the first matching rule wins, so the catch-all is last.
+
+/docs/bitsy/getting-started https://creator.chilichip.eu/tutorial/ 301
+/docs/bitsy/getting-started/ https://creator.chilichip.eu/tutorial/ 301
+/docs/bitsy/rooms https://creator.chilichip.eu/tutorial/1-rooms/ 301
+/docs/bitsy/rooms/ https://creator.chilichip.eu/tutorial/1-rooms/ 301
+/docs/bitsy/avatar-and-sprites https://creator.chilichip.eu/tutorial/2-avatar-and-sprites/ 301
+/docs/bitsy/avatar-and-sprites/ https://creator.chilichip.eu/tutorial/2-avatar-and-sprites/ 301
+/docs/bitsy/items https://creator.chilichip.eu/tutorial/3-items/ 301
+/docs/bitsy/items/ https://creator.chilichip.eu/tutorial/3-items/ 301
+/docs/bitsy/dialogue https://creator.chilichip.eu/tutorial/4-dialog/ 301
+/docs/bitsy/dialogue/ https://creator.chilichip.eu/tutorial/4-dialog/ 301
+/docs/bitsy/exits-and-endings https://creator.chilichip.eu/tutorial/5-exits-and-endings/ 301
+/docs/bitsy/exits-and-endings/ https://creator.chilichip.eu/tutorial/5-exits-and-endings/ 301
+/docs/bitsy/test-and-publish https://creator.chilichip.eu/tutorial/7-test-and-release/ 301
+/docs/bitsy/test-and-publish/ https://creator.chilichip.eu/tutorial/7-test-and-release/ 301
+/docs/bitsy/tools https://creator.chilichip.eu/tools/ 301
+/docs/bitsy/tools/ https://creator.chilichip.eu/tools/ 301
+/docs/bitsy/tools/blip https://creator.chilichip.eu/tools/blips/ 301
+/docs/bitsy/tools/blip/ https://creator.chilichip.eu/tools/blips/ 301
+/docs/bitsy/tools/colors https://creator.chilichip.eu/tools/colors/ 301
+/docs/bitsy/tools/colors/ https://creator.chilichip.eu/tools/colors/ 301
+/docs/bitsy/tools/dialog https://creator.chilichip.eu/tools/dialog/ 301
+/docs/bitsy/tools/dialog/ https://creator.chilichip.eu/tools/dialog/ 301
+/docs/bitsy/tools/exits-and-endings https://creator.chilichip.eu/tools/exits/ 301
+/docs/bitsy/tools/exits-and-endings/ https://creator.chilichip.eu/tools/exits/ 301
+/docs/bitsy/tools/find https://creator.chilichip.eu/tools/find/ 301
+/docs/bitsy/tools/find/ https://creator.chilichip.eu/tools/find/ 301
+/docs/bitsy/tools/game https://creator.chilichip.eu/tools/game/ 301
+/docs/bitsy/tools/game/ https://creator.chilichip.eu/tools/game/ 301
+/docs/bitsy/tools/inventory https://creator.chilichip.eu/tools/library/ 301
+/docs/bitsy/tools/inventory/ https://creator.chilichip.eu/tools/library/ 301
+/docs/bitsy/tools/paint https://creator.chilichip.eu/tools/paint/ 301
+/docs/bitsy/tools/paint/ https://creator.chilichip.eu/tools/paint/ 301
+/docs/bitsy/tools/play-mode https://creator.chilichip.eu/tools/play/ 301
+/docs/bitsy/tools/play-mode/ https://creator.chilichip.eu/tools/play/ 301
+/docs/bitsy/tools/record-gif https://creator.chilichip.eu/tools/play/ 301
+/docs/bitsy/tools/record-gif/ https://creator.chilichip.eu/tools/play/ 301
+/docs/bitsy/tools/room https://creator.chilichip.eu/tools/room/ 301
+/docs/bitsy/tools/room/ https://creator.chilichip.eu/tools/room/ 301
+/docs/bitsy/tools/tune https://creator.chilichip.eu/tools/tunes/ 301
+/docs/bitsy/tools/tune/ https://creator.chilichip.eu/tools/tunes/ 301
+/docs/bitsy https://creator.chilichip.eu/ 301
+/docs/bitsy/* https://creator.chilichip.eu/ 301
