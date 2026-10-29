@@ -26,8 +26,8 @@ pageRef = "docs/vgc-zero"
 parent = "docs"
 
 [[main]]
-name = "bitsy"
-pageRef = "docs/bitsy"
+name = "creator"
+url = "https://creator.chilichip.eu/"
 parent = "docs"
 
 [[main]]

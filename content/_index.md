@@ -65,7 +65,7 @@ steps:
   items:
     - name: "Make"
       text: "Draw rooms and sprites in the Chili Creator, write a Bitsy story, or code with the Game SDK."
-      url: "/docs/bitsy/getting-started/"
+      url: "https://creator.chilichip.eu/tutorial/"
       linkLabel: "Start with Bitsy"
     - name: "Play"
       text: "Every game runs in the browser, on your phone with touch controls, and natively on VGC Zero."
