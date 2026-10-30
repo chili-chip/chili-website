@@ -3,8 +3,8 @@ title: "Snek"
 date: 2026-10-06
 lastmod: 2026-10-10
 draft: false
-description: "Polished snake for VGC Zero, with a soundtrack, high scores and golden apples"
-summary: "Eat them apples! Polished snake for VGC Zero"
+description: "Polished snake for the chilichip console, with a soundtrack, high scores and golden apples"
+summary: "Eat them apples! Polished snake for the chilichip console"
 tags: ["game", "arcade", "snake"]
 ---
 
@@ -39,7 +39,7 @@ On mobile the embedded game is hidden; use the button to open it in a new tab.
 - **Music** and **Sound** on or off. Settings and high scores are saved.
 
 ### About the game
-A snake game for VGC Zero with an animated title screen, a demo snake playing in the background, a top-five high score table, particles, screen shake and an original chiptune soundtrack synthesised live on the console's audio channels. Built with the chili-chip 32blit SDK for the handheld, desktop, and the web.
+A snake game for the chilichip console with an animated title screen, a demo snake playing in the background, a top-five high score table, particles, screen shake and an original chiptune soundtrack synthesised live on the console's audio channels. Built with the chili-chip 32blit SDK for the handheld, desktop, and the web.
 
 ### Source code
 

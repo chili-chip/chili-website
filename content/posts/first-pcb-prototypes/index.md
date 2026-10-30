@@ -1,18 +1,18 @@
 ---
-title: "Our first VGC Zero PCBs are alive"
+title: "Our first chilichip console PCBs are alive"
 date: 2026-10-30
 draft: false
-description: "We ordered ten VGC Zero boards, built two working prototypes and have been playing and testing on them ever since. Here is what they look like and what comes next."
+description: "We ordered ten console boards, built two working prototypes and have been playing and testing on them ever since. Here is what they look like and what comes next."
 tags: ["vgc-zero", "hardware", "pcb", "prototype", "console"]
 authors: ["kacper"]
 ---
 
-Remember the [breadboard full of wires](/docs/vgc-zero/vgc-breadboard/) where VGC Zero started? It grew up! A couple of months ago we ordered our first batch of **ten VGC Zero PCBs** and built **two working prototypes** from them. We kept quiet for a while because we were busy playing on them. Time to show them off.
+Remember the [breadboard full of wires](/docs/vgc-zero/vgc-breadboard/) where the console started? It grew up! A couple of months ago we ordered our first batch of **ten console PCBs** and built **two working prototypes** from them. We kept quiet for a while because we were busy playing on them. Time to show them off.
 
 {{< figure
   src="featured.jpg"
-  alt="A VGC Zero v1.1.4 prototype held in a hand, showing the Space Fighters TURBO title screen"
-  caption="VGC Zero v1.1.4, small enough to hold in one hand"
+  alt="A v1.1.4 prototype held in a hand, showing the Space Fighters TURBO title screen"
+  caption="The v1.1.4 prototype, small enough to hold in one hand"
 >}}
 
 ## What is on the board
@@ -30,7 +30,7 @@ The prototypes use board revision **v1.1.4**, a 2-layer PCB designed in KiCad. I
 
 {{< figure
   src="front.jpg"
-  alt="Front of the VGC Zero v1.1.4 board with the OLED screen, D-pad, A B X Y buttons and the chilichip logo"
+  alt="Front of the v1.1.4 board with the OLED screen, D-pad, A B X Y buttons and the chilichip logo"
   caption="The front: OLED screen on top, D-pad on the left, A B X Y on the right"
 >}}
 
@@ -38,7 +38,7 @@ Flip it over and you find the RP2350-Plus, the buzzer, the display cable and the
 
 {{< figure
   src="back.jpg"
-  alt="Back of the VGC Zero board with the RP2350-Plus module, buzzer, display connector, power switch and a LiPo battery"
+  alt="Back of the v1.1.4 board with the RP2350-Plus module, buzzer, display connector, power switch and a LiPo battery"
   caption="The back: RP2350-Plus, buzzer, display connector and a taped-on battery"
 >}}
 
@@ -46,11 +46,11 @@ Flip it over and you find the RP2350-Plus, the buzzer, the display cable and the
 
 Since the build we have been testing on them. Our games run on the real hardware: [Space Fighters TURBO](/games/space-fighter/), [Tetris](/games/tetris/), [Snek](/games/snek/), [Minesweeper](/games/minesweeper/) and more. They also became our test bench for [ChiliChip OS](/posts/chilichip-os/) and for [Bitsy games with citsy](/posts/citsy-engine/).
 
-We also printed a case to see how VGC Zero feels as a real handheld instead of a bare board.
+We also printed a case to see how the console feels as a real handheld instead of a bare board.
 
 {{< figure
   src="case.jpg"
-  alt="A red 3D-printed VGC Zero case with white and red buttons and a square screen"
+  alt="A red 3D-printed console case with white and red buttons and a square screen"
   caption="A 3D-printed test case"
 >}}
 
@@ -67,5 +67,39 @@ Two boards in our hands taught us more than months of drawing. Here is what chan
 ## What's next
 
 We are now designing the next version. It is **modular**: small, ready-made modules for the screen, sound, radio, buttons and the brain, which you solder onto the main board yourself. You can follow along in the [tracking issue](https://github.com/chili-chip/vgc-zero-hardware/issues/32).
+
+Here is a first look at the new main board, **v1.2.0**. The routing is not done yet, so treat these as a work in progress.
+
+{{< figure
+  src="v1-2-0-top.jpg"
+  alt="Render of the front of the v1.2.0 main board"
+  caption="v1.2.0 main board, front (render)"
+>}}
+
+{{< figure
+  src="v1-2-0-bottom.jpg"
+  alt="Render of the back of the v1.2.0 main board with spots for the brain and the audio module"
+  caption="v1.2.0 main board, back: spots for the brain (MCU1) and the audio module (AUDIO1)"
+>}}
+
+{{< figure
+  src="v1-2-0-schematic.png"
+  alt="Schematic of the v1.2.0 main board with the RP2350 module, buttons, display, radio module and debug header"
+  caption="v1.2.0 schematic: brain, buttons, display, radio module and an SWD debug header"
+>}}
+
+The sound lives on its own tiny board: a MAX98357A amplifier and a 2-pin speaker connector. Its files are in [chili-audio-module-hardware](https://github.com/chili-chip/chili-audio-module-hardware).
+
+{{< figure
+  src="audio-module.jpg"
+  alt="Render of the audio module with the MAX98357A amplifier"
+  caption="The audio module (render)"
+>}}
+
+{{< figure
+  src="audio-module-schematic.png"
+  alt="Schematic of the audio module with the MAX98357A amplifier"
+  caption="Audio module schematic"
+>}}
 
 Want to build one, or just have ideas? Come chat in the [community forum](https://platform.chilichip.eu/community), say hi on [Discord](https://discord.gg/xB9sPYKBZc), or open an issue on [GitHub](https://github.com/chili-chip/vgc-zero-hardware).

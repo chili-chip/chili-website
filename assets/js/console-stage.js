@@ -1,4 +1,4 @@
-// Interactive 3D VGC Zero for the landing page hero.
+// Interactive 3D chilichip console for the landing page hero.
 // Port of the console stage on the chili platform landing page
 // (chili-platform-frontend src/app/features/landing/console-stage.ts and console-model.ts),
 // so both sites show the same model, lighting and screen animation.

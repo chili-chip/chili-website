@@ -7,13 +7,13 @@ title = "chilichip"
 displayName = "EN"
 isoCode = "en"
 rtl = false
-description = "chilichip is an indie electronics company building VGC Zero, an open-source game console for your keychain, and the chili platform for making and sharing games."
+description = "chilichip is an indie electronics company building the chilichip console, an open-source game console for your keychain, and the chili platform for making and sharing games."
 dateFormat = "2 January 2006"
 logo = "img/logo.png"
 
 [params.author]
 name = "chilichip"
-bio = "Makers of VGC Zero, a tiny open-source handheld for playing and making games."
+bio = "Makers of the chilichip console, a tiny open-source handheld for playing and making games."
 headline = "spicy electronics"
 image = "img/logo.png"
 

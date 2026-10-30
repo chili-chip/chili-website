@@ -3,11 +3,11 @@ title: "Graphics - sprites"
 date: 2026-01-20
 lastmod: 2026-01-20
 draft: false
-description: "Learn about sprite handling and rendering in the Game SDK for VGC Zero."
+description: "Learn about sprite handling and rendering in the Game SDK for the chilichip console."
 tags: ["sprites", "sdk", "api", "graphics", "vgc-zero", "development"]
 ---
 
-This section covers sprite handling and rendering capabilities of the Game SDK for VGC Zero. It includes information on loading sprites from assets, drawing them in various ways, and managing sprite collections.
+This section covers sprite handling and rendering capabilities of the Game SDK for the chilichip console. It includes information on loading sprites from assets, drawing them in various ways, and managing sprite collections.
 
 ## Sprite sheets
 

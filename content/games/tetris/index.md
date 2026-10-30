@@ -3,8 +3,8 @@ title: "Tetris"
 date: 2026-10-06
 lastmod: 2026-10-10
 draft: false
-description: "Polished falling-block puzzler for VGC Zero, with hold, ghost piece, high scores and a chiptune soundtrack"
-summary: "Stack, clear, repeat. Polished Tetris with a chili twist for VGC Zero"
+description: "Polished falling-block puzzler for the chilichip console, with hold, ghost piece, high scores and a chiptune soundtrack"
+summary: "Stack, clear, repeat. Polished Tetris with a chili twist for the chilichip console"
 tags: ["game", "puzzle", "arcade"]
 ---
 
@@ -55,7 +55,7 @@ Back-to-back Tetrises and T-spins score 1.5×, clearing lines with consecutive p
 - **Music**, **Sound** and **Ghost piece** on or off. Settings and high scores are saved.
 
 ### About the game
-A Tetris for VGC Zero with a chili twist: an animated title screen, modern rules (SRS rotation with wall kicks, 7-bag randomiser, hold, ghost piece, lock delay), next-three preview, line-clear flashes, particles and screen shake on a Tetris, a pause menu and a top-five high score table. The soundtrack is synthesised live on the console's audio channels: an original title theme, "Chili Habanera", and a new arrangement of the folk song Korobeiniki in game. Built with the chili-chip 32blit SDK for the handheld, desktop, and the web.
+A Tetris for the chilichip console with a chili twist: an animated title screen, modern rules (SRS rotation with wall kicks, 7-bag randomiser, hold, ghost piece, lock delay), next-three preview, line-clear flashes, particles and screen shake on a Tetris, a pause menu and a top-five high score table. The soundtrack is synthesised live on the console's audio channels: an original title theme, "Chili Habanera", and a new arrangement of the folk song Korobeiniki in game. Built with the chili-chip 32blit SDK for the handheld, desktop, and the web.
 
 ### Source code
 

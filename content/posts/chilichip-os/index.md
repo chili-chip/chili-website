@@ -2,12 +2,12 @@
 title: "Meet ChiliChip OS: a real home for your games"
 date: 2026-10-14
 draft: false
-description: "VGC Zero now turns on into ChiliChip OS: a spicy home screen, drag-and-drop games, a pause menu and saves that stick around."
+description: "The chilichip console now turns on into ChiliChip OS: a spicy home screen, drag-and-drop games, a pause menu and saves that stick around."
 tags: ["chilichip-os", "vgc-zero", "console", "games"]
 authors: ["kacper"]
 ---
 
-Turn on a VGC Zero and say hello to **ChiliChip OS**! Your console now has a proper home: a bold, chili-red home screen with all your games lined up and ready to play. No more one game at a time. Put as many games on it as you like and pick one whenever you want.
+Turn on a chilichip console and say hello to **ChiliChip OS**! Your console now has a proper home: a bold, chili-red home screen with all your games lined up and ready to play. No more one game at a time. Put as many games on it as you like and pick one whenever you want.
 
 {{< figure
   src="featured.png"
@@ -35,7 +35,7 @@ Want to know more about a game? Press Y for its info card: who made it, which ve
 
 ## Adding games is drag and drop
 
-Plug your VGC Zero into a computer and a drive called **CHILICHIP** pops up. Drop your games onto it, eject, and watch the console install them with a little progress bar. That's it. Updating a game works the same way, and your progress comes along for the ride.
+Plug your chilichip console into a computer and a drive called **CHILICHIP** pops up. Drop your games onto it, eject, and watch the console install them with a little progress bar. That's it. Updating a game works the same way, and your progress comes along for the ride.
 
 If a file isn't a game or something went wrong, the console tells you in plain words and leaves the file where it is.
 
@@ -61,4 +61,4 @@ The last tile on the home screen (or the MENU button) opens Settings. Set your b
 
 ChiliChip OS is the start of something we are really excited about. It is the home your games will land in when you make them in our no-code [game creator](https://platform.chilichip.eu) or pick them up on the platform. We are still testing it on more consoles, so expect a few rounds of polish.
 
-Got a VGC Zero? Give it a spin and tell us what you think! Come chat in the [community forum](https://platform.chilichip.eu/community), say hi on [Discord](https://discord.gg/xB9sPYKBZc), or open an issue on [GitHub](https://github.com/chili-chip).
+Got a chilichip console? Give it a spin and tell us what you think! Come chat in the [community forum](https://platform.chilichip.eu/community), say hi on [Discord](https://discord.gg/xB9sPYKBZc), or open an issue on [GitHub](https://github.com/chili-chip).

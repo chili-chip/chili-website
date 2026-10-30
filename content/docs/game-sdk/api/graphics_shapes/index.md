@@ -3,11 +3,11 @@ title: "Graphics - shapes"
 date: 2026-01-20
 lastmod: 2026-01-20
 draft: false
-description: "Learn about the graphics capabilities and API of the Game SDK for VGC Zero."
+description: "Learn about the graphics capabilities and API of the Game SDK for the chilichip console."
 tags: ["sdk", "api", "graphics", "vgc-zero", "development"]
 ---
 
-This section covers the graphics capabilities and API of the Game SDK for VGC Zero. It includes information on basics of drawing and drawing shapes.
+This section covers the graphics capabilities and API of the Game SDK for the chilichip console. It includes information on basics of drawing and drawing shapes.
 
 ## Drawing basics
 The Game SDK provides a variety of functions for drawing shapes, images, and text to the `screen`.

@@ -7,7 +7,7 @@ description: "Get started with the SDK on Linux: setup, tools, and your first ga
 tags: ["sdk", "quickstart", "vgc-zero", "development", "getting-started"]
 ---
 
-This guide will help you get started with setting up your development environment on Linux and creating your first game for the VGC Zero console.
+This guide will help you get started with setting up your development environment on Linux and creating your first game for the chilichip console.
 
 ### Prerequisites
 
@@ -81,9 +81,9 @@ pip install 32blit
     ```
 
     This will launch the game in a window on your desktop using SDL2.
-    Now you can test and develop your game locally before deploying it to the VGC Zero hardware.
+    Now you can test and develop your game locally before deploying it to the chilichip console hardware.
 
-### Building for VGC Zero
+### Building for the chilichip console
 
 1. Get necessary tools
 
@@ -114,7 +114,7 @@ pip install 32blit
     cd build.vgc
     ```
 
-3. Configure the build for VGC Zero
+3. Configure the build for the chilichip console
 
     Run `cmake` with the board and platform specified:
 
@@ -129,7 +129,7 @@ pip install 32blit
 
 > Adjust paths if your SDKs are located elsewhere relative to your project directory.
 
-4. Build the game for VGC Zero
+4. Build the game for the chilichip console
 
     ```bash
     make
@@ -137,11 +137,11 @@ pip install 32blit
 
     This will produce a `.uf2` file in the `build.vgc` directory.
 
-### Flashing to VGC Zero
+### Flashing to the chilichip console
 
-1. Connect your VGC Zero to your computer via USB.
-2. Put the VGC Zero into bootloader mode by holding down the BOOT button while plugging it in.
-3. Your computer should recognize the VGC Zero as a removable drive named `RP2350`.
+1. Connect your chilichip console to your computer via USB.
+2. Put your chilichip console into bootloader mode by holding down the BOOT button while plugging it in.
+3. Your computer should recognize the chilichip console as a removable drive named `RP2350`.
 4. Copy the generated `.uf2` file from the `build.vgc` directory to the `RP2350` drive.
 5. The console will reboot and run your game.
 
