@@ -57,6 +57,12 @@ pre = "discord"
 url = "https://discord.gg/xB9sPYKBZc"
 weight = 8
 
+[[main]]
+identifier = "instagram"
+pre = "instagram"
+url = "https://www.instagram.com/chilichipelectronics/"
+weight = 9
+
 [[footer]]
 name = "vgc zero"
 pageRef = "docs/vgc-zero/discover-vgc-zero"
