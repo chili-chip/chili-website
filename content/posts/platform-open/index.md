@@ -2,12 +2,12 @@
 title: "The chili platform is open. Come on in!"
 date: 2026-10-10
 draft: false
-description: "Our new home for everything VGC Zero is open: a studio, a community and soon a store, all in one place."
+description: "Our new home for everything about the chilichip console is open: a studio, a community and soon a store, all in one place."
 tags: ["platform", "community", "store", "creator"]
 authors: ["kacper"]
 ---
 
-Big week, chili fam: [the chili platform](https://platform.chilichip.eu) is open! It is our home for everything VGC Zero: a studio, a community and soon a store, all in one place. Pull up a chair, make an account and look around. We will show you what is inside.
+Big week, chili fam: [the chili platform](https://platform.chilichip.eu) is open! It is our home for everything about the chilichip console: a studio, a community and soon a store, all in one place. Pull up a chair, make an account and look around. We will show you what is inside.
 
 {{< figure
   src="featured.png"

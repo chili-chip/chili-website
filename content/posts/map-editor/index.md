@@ -83,7 +83,7 @@ Use a 128px‑wide tileset → paint a 16×16 room (two layers) → export a rea
 5. Export header → drop into your project.
 6. Include arrays directly in your room loader.
 
-## Why It Helps (VGC / 32blit)
+## Why It Helps (console / 32blit)
 - Removes manual tile index bookkeeping.
 - Deterministic arrays keep diffs clean → easy reviews.
 - Encourages small, memory‑friendly content chunks.

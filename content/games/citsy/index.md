@@ -2,13 +2,13 @@
 title: "Citsy"
 date: 2026-09-15
 draft: false
-description: "Bitsy player for VGC Zero"
-summary: "A native Bitsy player with a 128×128 retro launcher. Author games at bitsy.org, export a .bitsy file, and play on VGC Zero, 32blit, desktop, or the web."
+description: "Bitsy player for the chilichip console"
+summary: "A native Bitsy player with a 128×128 retro launcher. Author games at bitsy.org, export a .bitsy file, and play on the chilichip console, 32blit, desktop, or the web."
 tags: ["game", "bitsy", "vgc-zero", "adventure", "citsy"]
 ---
 
 {{< lead >}}
-A little engine for little games — running natively on VGC Zero’s 128×128 screen.
+A little engine for little games — running natively on the chilichip console’s 128×128 screen.
 {{< /lead >}}
 
 {{< game-iframe url="https://citsy.chilichip.eu/" width="600" height="600" title="Citsy Bitsy player" >}}
@@ -33,9 +33,9 @@ The launcher ships with **Mossland** and **Sandbox**. Drop your own `.bitsy` exp
 
 ### About the player
 
-**Citsy** is a headless C++ reimplementation of the [Bitsy](https://bitsy.org) engine. **citsy-32blit** is the 32blit host: it maps VGC Zero / desktop controls, blits the 128×128 framebuffer, and plays square-wave audio. Rooms are 16×16 tiles of 8×8 pixels — native resolution on the console.
+**Citsy** is a headless C++ reimplementation of the [Bitsy](https://bitsy.org) engine. **citsy-32blit** is the 32blit host: it maps chilichip console / desktop controls, blits the 128×128 framebuffer, and plays square-wave audio. Rooms are 16×16 tiles of 8×8 pixels — native resolution on the console.
 
-Read the launch post: [Announcing Citsy: Bitsy on VGC Zero](/posts/citsy-engine/).
+Read the launch post: [Announcing Citsy: Bitsy on the chilichip console](/posts/citsy-engine/).
 
 ### Source code
 

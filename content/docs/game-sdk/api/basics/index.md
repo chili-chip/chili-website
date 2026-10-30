@@ -3,11 +3,11 @@ title: "Game SDK basics"
 date: 2025-12-16
 lastmod: 2025-12-16
 draft: false
-description: "Learn the fundamental concepts and components of the Game SDK for VGC Zero."
+description: "Learn the fundamental concepts and components of the Game SDK for the chilichip console."
 tags: ["sdk", "api", "basics", "vgc-zero", "development"]
 ---
 
-This section covers the basic concepts and components of the Game SDK for VGC Zero. Understanding these fundamentals will help you effectively utilize the SDK to create engaging games for the console.
+This section covers the basic concepts and components of the Game SDK for the chilichip console. Understanding these fundamentals will help you effectively utilize the SDK to create engaging games for the console.
 
 ## Project Structure
 A typical game project using the Game SDK has the following structure:
@@ -17,7 +17,7 @@ project_root/       # Root directory of your game project
 ├── .github/        # GitHub configuration files (e.g., workflows)
 ├── assets/         # Game assets like images, sounds, and fonts
 ├── build/          # Build artifacts
-├── build.vgc/      # VGC Zero-specific build files
+├── build.vgc/      # console build files
 ├── .gitignore      # Git ignore rules
 ├── assets.yml      # Asset configuration file
 ├── CMakeLists.txt  # CMake build configuration
@@ -29,11 +29,11 @@ project_root/       # Root directory of your game project
 ```
 
 ## Game Metadata
-The `metadata.yml` file contains essential information about your game, such as its title, author, version, and description. This metadata is used by the VGC Zero console to display game information.
+The `metadata.yml` file contains essential information about your game, such as its title, author, version, and description. This metadata is used by the chilichip console to display game information.
 
 ```
 title: My awesome game
-description: An exciting game made for VGC Zero.
+description: An exciting game made for the chilichip console.
 author: chilichip
 splash:
   file: assets/no-image.png

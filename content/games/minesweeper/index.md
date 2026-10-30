@@ -3,8 +3,8 @@ title: "Minesweeper"
 date: 2025-09-20
 lastmod: 2026-10-16
 draft: false
-description: "The classic logic puzzle for VGC Zero, with four levels, best times and an original soundtrack"
-summary: "Flag the mines, clear the board, beat your best time. Classic Minesweeper for VGC Zero"
+description: "The classic logic puzzle for the chilichip console, with four levels, best times and an original soundtrack"
+summary: "Flag the mines, clear the board, beat your best time. Classic Minesweeper for the chilichip console"
 tags: ["game", "logic", "puzzle"]
 ---
 
@@ -44,7 +44,7 @@ On mobile the embedded game is hidden; use the button to open it in a new tab.
 Each level keeps its own top-five best times, games won and win streaks. **Music** and **Sound** can be turned off in the menu, and everything is saved.
 
 ### About the game
-The classic Minesweeper for VGC Zero, with ripple reveals, a chain-reaction explosion, confetti when you clear the board, a board that plays itself behind the menus and an original chiptune soundtrack synthesised live on the console's audio channels. Built with the chili-chip 32blit SDK for the handheld, desktop, and the web.
+The classic Minesweeper for the chilichip console, with ripple reveals, a chain-reaction explosion, confetti when you clear the board, a board that plays itself behind the menus and an original chiptune soundtrack synthesised live on the console's audio channels. Built with the chili-chip 32blit SDK for the handheld, desktop, and the web.
 
 ### Source code
 

@@ -9,4 +9,4 @@ cascade:
   groupByYear: false
 ---
 
-Documentation for our projects: the VGC Zero console and the Game SDK. To make Bitsy games, see the [Chili Creator docs](https://creator.chilichip.eu/).
+Documentation for our projects: the chilichip console and the Game SDK. To make Bitsy games, see the [Chili Creator docs](https://creator.chilichip.eu/).

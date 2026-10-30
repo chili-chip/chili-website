@@ -1,25 +1,25 @@
 ---
 title: "chilichip: pocket game consoles you can play, make and hack"
-description: "chilichip builds VGC Zero, an open-source game console that fits on your keychain, and the chili platform, where anyone can make a game in the browser and play it on real hardware."
+description: "chilichip builds the chilichip console, an open-source game console that fits on your keychain, and the chili platform, where anyone can make a game in the browser and play it on real hardware."
 
 # Landing page copy, rendered by layouts/partials/home/custom.html.
 # Games and blog posts on the landing page come from content/games and content/posts.
 hero:
-  eyebrow: "VGC Zero · first hardware in 2027"
+  eyebrow: "chilichip console · first hardware in 2027"
   title: "Tiny consoles."
   titleAccent: "Big ideas."
-  lead: "chilichip is an indie electronics company. We build VGC Zero, an open-source game console that clips to your keychain, and the chili platform, where anyone can make a game in the browser and play it on real hardware."
+  lead: "chilichip is an indie electronics company. We build the chilichip console, an open-source game console that clips to your keychain, and the chili platform, where anyone can make a game in the browser and play it on real hardware."
   primary:
-    label: "Discover VGC Zero"
+    label: "Discover the chilichip console"
     url: "/docs/vgc-zero/discover-vgc-zero/"
   secondary:
     label: "Play in your browser"
     url: "/games/"
   imagePage: "/docs/vgc-zero/discover-vgc-zero"
   image: "render.jpg"
-  imageAlt: "A render of the VGC Zero handheld console"
-  modelLabel: "3D model of the VGC Zero handheld. Drag to turn it."
-  imageCaption: "VGC Zero 3D model · drag to turn"
+  imageAlt: "A render of the chilichip console"
+  modelLabel: "3D model of the chilichip console. Drag to turn it."
+  imageCaption: "chilichip console 3D model · drag to turn"
 
 stats:
   - value: "2"
@@ -35,7 +35,7 @@ products:
   title: "Everything you need to play and make games"
   lead: "One console, one platform and a set of open tools that work together, from your first room to a game on your keychain."
   items:
-    - name: "VGC Zero"
+    - name: "chilichip console"
       tag: "Hardware"
       icon: "microchip"
       text: "A keychain-sized handheld with an RP2350, a 128×128 colour screen and real buttons. Open hardware, from schematics to shell."
@@ -68,7 +68,7 @@ steps:
       url: "https://creator.chilichip.eu/tutorial/"
       linkLabel: "Start with Bitsy"
     - name: "Play"
-      text: "Every game runs in the browser, on your phone with touch controls, and natively on VGC Zero."
+      text: "Every game runs in the browser, on your phone with touch controls, and natively on the chilichip console."
       url: "/games/"
       linkLabel: "Browse games"
     - name: "Share"
@@ -78,7 +78,7 @@ steps:
 
 games:
   title: "Play right now"
-  lead: "Our games run in your browser today and on VGC Zero tomorrow. No install needed."
+  lead: "Our games run in your browser today and on the chilichip console tomorrow. No install needed."
   count: 4
 
 posts:

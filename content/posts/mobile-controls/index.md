@@ -25,7 +25,7 @@ And mobile is just one piece of the puzzle — games created with our SDK are no
 - Linux  
 - 32blit console (stm32)
 - Web  
-- Chilichip’s **VGC Zero console**
+- the **chilichip console**
 
 👉 **Try it now**:
 

@@ -3,11 +3,11 @@ title: "Graphics - text"
 date: 2026-01-20
 lastmod: 2026-01-20
 draft: false
-description: "Learn about the text drawing capabilities and API of the Game SDK for VGC Zero."
+description: "Learn about the text drawing capabilities and API of the Game SDK for the chilichip console."
 tags: ["text", "sdk", "api", "graphics", "vgc-zero", "development"]
 ---
 
-This section covers the graphics capabilities and API of the Game SDK for VGC Zero, focusing on text rendering. It includes information on how to draw text, manage fonts, and utilize text-related features available to developers.
+This section covers the graphics capabilities and API of the Game SDK for the chilichip console, focusing on text rendering. It includes information on how to draw text, manage fonts, and utilize text-related features available to developers.
 
 ## Fonts
 The 32blit engine supplies functions for drawing text to any surface using built-in fonts or TTF/image fonts processed via the asset pipeline.

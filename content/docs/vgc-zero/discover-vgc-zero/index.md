@@ -1,26 +1,26 @@
 ---
-title: "Discover VGC Zero"
+title: "Discover the chilichip console"
 date: 2025-09-17
-lastmod: 2026-10-15
+lastmod: 2026-10-30
 draft: false
-description: "VGC Zero is a tiny open hardware & open source handheld (targeting 2027) built for playing and making games—right from your keychain."
+description: "The chilichip console is a tiny open hardware & open source handheld (targeting 2027) built for playing and making games—right from your keychain."
 tags: ["vgc-zero", "console", "keychain", "portable", "gaming", "open-source"]
 ---
 
-# VGC Zero: The Ultra-Portable Keychain Video Game Console
+# chilichip console: the ultra-portable keychain game console
 
 {{< figure
     src="render.jpg"
     alt="Console render"
-    caption="VGC Zero visualization (not final hardware)"
+    caption="chilichip console visualization (not final hardware)"
     >}}
 
-**VGC Zero** is a pocket‑scale handheld you can actually carry everywhere. Clip it to your keys, plug in, code a game, share it—same device. Retro vibe, modern internals, fully hackable.
+The **chilichip console** is a pocket‑scale handheld you can actually carry everywhere. Clip it to your keys, plug in, code a game, share it—same device. Retro vibe, modern internals, fully hackable.
 
 
 ## Highlights
 
-What it feels like to own & build on VGC Zero:
+What it feels like to own & build on the chilichip console:
 - Always‑with‑you size: lives on your keychain, not a drawer
 - Hack-first mindset: hardware + firmware intentionally open
 - Fast iteration loop: edit → flash → run in seconds
@@ -33,12 +33,21 @@ What it feels like to own & build on VGC Zero:
 
 ## Development Status
 
-We have built two prototypes so far, and both run games. Our work can be tracked on our [github](https://github.com/chili-chip).
+Progress so far:
+
+| Stage | Status |
+|-------|--------|
+| Breadboard prototype | Done. Runs our games. |
+| v1.1.4 PCB | 10 boards ordered, 2 working prototypes built and in testing. See the [blog post](/posts/first-pcb-prototypes/). |
+| Next PCB | In design. |
+| First public hardware | 2027 |
+
+You can follow our work on [GitHub](https://github.com/chili-chip).
 
 {{< figure
     src="breadboard-prototype.jpg"
     alt="Breadboard prototype"
-    caption="VGC Zero breadboard prototype (not final hardware)"
+    caption="chilichip console breadboard prototype (not final hardware)"
     >}}
 
 ### Prototype hardware
@@ -52,7 +61,13 @@ The first prototype was built on a breadboard (see the [breadboard guide](/docs/
 | Audio     | HXJ8002 amplifier module + small speaker |
 | Controls  | Tactile buttons + rotary encoder |
 
-The current prototype is the **v1.1.4 PCB** ([vgc-zero-hardware](https://github.com/chili-chip/vgc-zero-hardware)):
+The current prototype is the **v1.1.4 PCB** ([vgc-zero-hardware](https://github.com/chili-chip/vgc-zero-hardware)). We ordered 10 boards and built 2 working prototypes:
+
+{{< figure
+    src="v1-1-4-front.jpg"
+    alt="The v1.1.4 PCB prototype with the OLED screen and buttons"
+    caption="v1.1.4 PCB prototype"
+    >}}
 
 | Component | Part |
 |-----------|------|
@@ -60,21 +75,42 @@ The current prototype is the **v1.1.4 PCB** ([vgc-zero-hardware](https://github.
 | Display   | Waveshare 1.5" RGB OLED module, 128×128, SSD1351 driver, SPI |
 | Audio     | Buzzer |
 | Controls  | 10 tactile buttons |
-| Power     | USB through the MCU module, slide power switch |
+| Power     | USB-C on the MCU module, slide power switch, LiPo battery on the module's battery connector |
 | Other     | Status LED, 3 GPIO pin headers |
 
-The v1.1.4 board has no battery, charger, headphone jack, rotary encoder or PSRAM yet. The next PCB revision moves to a TFT IPS display and adds audio filtering and a real-time clock.
+The v1.1.4 board has no headphone jack, rotary encoder or PSRAM.
+
+The schematic and gerbers are in the [v1.1.4 release](https://github.com/chili-chip/vgc-zero-hardware/releases/tag/v1.1.4).
+
+{{< figure
+    src="v1-1-4-schematic.png"
+    alt="Schematic of the v1.1.4 board"
+    caption="v1.1.4 schematic"
+    >}}
+
+{{< figure
+    src="v1-1-4-render-top.jpg"
+    alt="KiCad render of the front of the v1.1.4 board"
+    caption="v1.1.4 board, front (KiCad render)"
+    >}}
+
+{{< figure
+    src="v1-1-4-render-bottom.jpg"
+    alt="KiCad render of the back of the v1.1.4 board"
+    caption="v1.1.4 board, back (KiCad render)"
+    >}}
 
 First public hardware target: **2027**.
 
 We’re fully **open hardware + open source**:
-- Schematics, PCB, enclosure CAD: to be published under a permissive license.
+- Schematics and PCB: public now under the MIT license ([vgc-zero-hardware](https://github.com/chili-chip/vgc-zero-hardware)).
+- Enclosure CAD: to be published under a permissive license.
 - Bootloader, firmware, SDK, tools, sample games: open repo with documented changes.
 
 {{< figure
-    src="featured.jpg"
-    alt="PCB wireframe"
-    caption="Wireframe of VGC Zero PCB (not final hardware)"
+    src="archive-wireframe.jpg"
+    alt="Wireframe of an early, much older PCB design"
+    caption="From the archives: a wireframe of a much older board design"
     >}}
 
 ### What’s Coming Next
@@ -98,7 +134,7 @@ Build early. Hack freely. Give feedback before the compact edition lands.
 
 ## Target Specs
 
-These are the planned specs for the final VGC Zero, not the current prototype.
+These are the planned specs for the final chilichip console, not the current prototype.
 
 | Component | Specification |
 |-----------|---------------|
@@ -128,7 +164,7 @@ SDK features (work in progress):
 
 Automated CI:
 - Games auto-build via GitHub Actions targeting 6 platforms with artifacts you can download directly from each release:
-    - VGC Zero
+    - chilichip console
     - 32blit (console)
     - Web
     - Windows
@@ -154,4 +190,4 @@ We plan to upstream improvements where feasible with clear divergence docs.
 
 ## Community
 
-Join us on [Discord](https://discord.gg/xB9sPYKBZc) to discuss VGC Zero, share ideas, and get involved in development.
+Join us on [Discord](https://discord.gg/xB9sPYKBZc) to discuss the chilichip console, share ideas, and get involved in development.

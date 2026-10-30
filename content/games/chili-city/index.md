@@ -2,8 +2,8 @@
 title: "Chili City"
 date: 2026-10-11
 draft: false
-description: "A tiny SimCity-like city builder for VGC Zero"
-summary: "Lay roads, zone land and watch your city grow. A tiny city builder for VGC Zero"
+description: "A tiny SimCity-like city builder for the chilichip console"
+summary: "Lay roads, zone land and watch your city grow. A tiny city builder for the chilichip console"
 tags: ["game", "simulation", "city builder"]
 ---
 
@@ -31,7 +31,7 @@ Lay roads, zone land, watch it grow.
 On mobile the embedded game is hidden; use the button to open it in a new tab.
 
 ### About the game
-A small city builder in the spirit of the original SimCity, made for the 128×128 screen of VGC Zero. You start with $5000, build roads and residential, commercial and industrial zones, and a monthly simulation grows each zone through three building levels while the population and your budget change. Built with the chili-chip 32blit SDK for the handheld, desktop, and the web.
+A small city builder in the spirit of the original SimCity, made for the 128×128 screen of the chilichip console. You start with $5000, build roads and residential, commercial and industrial zones, and a monthly simulation grows each zone through three building levels while the population and your budget change. Built with the chili-chip 32blit SDK for the handheld, desktop, and the web.
 
 ### Source code
 

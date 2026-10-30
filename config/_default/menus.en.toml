@@ -1,6 +1,6 @@
 [[main]]
 identifier = "vgc-zero"
-name = "vgc zero"
+name = "console"
 pageRef = "docs/vgc-zero/discover-vgc-zero"
 weight = 1
 
@@ -21,7 +21,7 @@ parent = "docs"
 
 [[main]]
 identifier = "docs-vgc-zero"
-name = "vgc zero"
+name = "console"
 pageRef = "docs/vgc-zero"
 parent = "docs"
 
@@ -64,7 +64,7 @@ url = "https://www.instagram.com/chilichipelectronics/"
 weight = 9
 
 [[footer]]
-name = "vgc zero"
+name = "console"
 pageRef = "docs/vgc-zero/discover-vgc-zero"
 weight = 1
 
