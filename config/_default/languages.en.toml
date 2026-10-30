@@ -20,4 +20,5 @@ image = "img/logo.png"
 [[params.author.links]]
 github = "https://github.com/chili-chip"
 discord = "https://discord.gg/xB9sPYKBZc"
+instagram = "https://www.instagram.com/chilichipelectronics/"
 email = "mailto:chilichipelectronics@gmail.com"

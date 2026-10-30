@@ -24,6 +24,7 @@ Everything we make is open source. The code, the boards and the docs are all on 
 | Making your own games | [Game SDK docs](/docs/game-sdk/), [Chili Creator docs](https://creator.chilichip.eu/) |
 | News and dev logs | [Blog](/posts/) |
 | Chat with us | [Discord](https://discord.gg/xB9sPYKBZc) |
+| Photos and news | [Instagram](https://www.instagram.com/chilichipelectronics/) |
 
 ## The team
 
@@ -41,4 +42,4 @@ Eli loves doing hardware, artsy games and fun concepts.
 
 ## Get in touch
 
-Email us at [chilichipelectronics@gmail.com](mailto:chilichipelectronics@gmail.com), or say hi on [Discord](https://discord.gg/xB9sPYKBZc).
+Email us at [chilichipelectronics@gmail.com](mailto:chilichipelectronics@gmail.com), say hi on [Discord](https://discord.gg/xB9sPYKBZc), or follow us on [Instagram](https://www.instagram.com/chilichipelectronics/).
