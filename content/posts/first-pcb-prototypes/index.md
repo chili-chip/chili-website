@@ -2,7 +2,7 @@
 title: "Our first chilichip console PCBs are alive"
 date: 2026-10-30
 draft: false
-description: "We ordered ten console boards, built two working prototypes and have been playing and testing on them ever since. Here is what they look like and what comes next."
+description: "We ordered ten console boards, built two working prototypes and have been playing and testing on them ever since. Here is what they look like."
 tags: ["vgc-zero", "hardware", "pcb", "prototype", "console"]
 authors: ["kacper"]
 ---
@@ -54,52 +54,30 @@ We also printed a case to see how the console feels as a real handheld instead o
   caption="A 3D-printed test case"
 >}}
 
-## What we learned
+## The design files
 
-Two boards in our hands taught us more than months of drawing. Here is what changes in the next version:
+The board is open hardware under the MIT license. You can grab the schematic and gerbers from the [v1.1.4 release](https://github.com/chili-chip/vgc-zero-hardware/releases/tag/v1.1.4) and build your own.
 
-- **Screen on a pin header.** The OLED stays, but it plugs into a simple 2.54 mm pin header instead of a cable.
-- **Better sound.** The buzzer gives way to a small audio module with a MAX98357A amplifier and noise filtering.
-- **A clock.** We are adding an RTC, so games and the OS know the time.
-- **Wireless.** WiFi and Bluetooth come from the Raspberry Pi Radio Module 2.
-- **The LED goes.** It will be removed or replaced.
+{{< figure
+  src="v1-1-4-schematic.png"
+  alt="Schematic of the v1.1.4 board with the RP2350-Plus, ten buttons, power switch, LED, buzzer, display connector and GPIO headers"
+  caption="The v1.1.4 schematic"
+>}}
+
+{{< figure
+  src="v1-1-4-render-top.jpg"
+  alt="KiCad render of the front of the v1.1.4 board"
+  caption="v1.1.4 board, front (KiCad render)"
+>}}
+
+{{< figure
+  src="v1-1-4-render-bottom.jpg"
+  alt="KiCad render of the back of the v1.1.4 board with the MCU footprint, buzzer, display connector and pin headers"
+  caption="v1.1.4 board, back (KiCad render)"
+>}}
 
 ## What's next
 
-We are now designing the next version. It is **modular**: small, ready-made modules for the screen, sound, radio, buttons and the brain, which you solder onto the main board yourself. You can follow along in the [tracking issue](https://github.com/chili-chip/vgc-zero-hardware/issues/32).
-
-Here is a first look at the new main board, **v1.2.0**. The routing is not done yet, so treat these as a work in progress.
-
-{{< figure
-  src="v1-2-0-top.jpg"
-  alt="Render of the front of the v1.2.0 main board"
-  caption="v1.2.0 main board, front (render)"
->}}
-
-{{< figure
-  src="v1-2-0-bottom.jpg"
-  alt="Render of the back of the v1.2.0 main board with spots for the brain and the audio module"
-  caption="v1.2.0 main board, back: spots for the brain (MCU1) and the audio module (AUDIO1)"
->}}
-
-{{< figure
-  src="v1-2-0-schematic.png"
-  alt="Schematic of the v1.2.0 main board with the RP2350 module, buttons, display, radio module and debug header"
-  caption="v1.2.0 schematic: brain, buttons, display, radio module and an SWD debug header"
->}}
-
-The sound lives on its own tiny board: a MAX98357A amplifier and a 2-pin speaker connector. Its files are in [chili-audio-module-hardware](https://github.com/chili-chip/chili-audio-module-hardware).
-
-{{< figure
-  src="audio-module.jpg"
-  alt="Render of the audio module with the MAX98357A amplifier"
-  caption="The audio module (render)"
->}}
-
-{{< figure
-  src="audio-module-schematic.png"
-  alt="Schematic of the audio module with the MAX98357A amplifier"
-  caption="Audio module schematic"
->}}
+Two boards in our hands taught us more than months of drawing. We are already working on the next version, and we will share it here when it is ready.
 
 Want to build one, or just have ideas? Come chat in the [community forum](https://platform.chilichip.eu/community), say hi on [Discord](https://discord.gg/xB9sPYKBZc), or open an issue on [GitHub](https://github.com/chili-chip/vgc-zero-hardware).

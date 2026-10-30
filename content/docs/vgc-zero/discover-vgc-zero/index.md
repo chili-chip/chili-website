@@ -39,10 +39,10 @@ Progress so far:
 |-------|--------|
 | Breadboard prototype | Done. Runs our games. |
 | v1.1.4 PCB | 10 boards ordered, 2 working prototypes built and in testing. See the [blog post](/posts/first-pcb-prototypes/). |
-| v1.2.0 PCB | In design. Modular: screen, sound, radio and brain on small modules. |
+| Next PCB | In design. |
 | First public hardware | 2027 |
 
-You can follow our work on [GitHub](https://github.com/chili-chip) and in the [hardware tracking issue](https://github.com/chili-chip/vgc-zero-hardware/issues/32).
+You can follow our work on [GitHub](https://github.com/chili-chip).
 
 {{< figure
     src="breadboard-prototype.jpg"
@@ -80,48 +80,24 @@ The current prototype is the **v1.1.4 PCB** ([vgc-zero-hardware](https://github.
 
 The v1.1.4 board has no headphone jack, rotary encoder or PSRAM.
 
-### Next revision: v1.2.0 (in design)
-
-The next board is **modular**. Small, ready-made modules carry the screen, sound, radio and the RP2350 brain. You solder them onto the main board yourself. Routing is not finished yet, so these renders show a work in progress.
-
-| Change | Why |
-|--------|-----|
-| OLED on a 2.54 mm pin header | Simpler than the display cable |
-| Audio module with a MAX98357A I2S amplifier | Real speaker sound instead of a buzzer |
-| Raspberry Pi Radio Module 2 | WiFi and Bluetooth |
-| SWD debug header | Easier firmware debugging |
-| Audio noise filtering, RTC | Planned for this revision |
+The schematic and gerbers are in the [v1.1.4 release](https://github.com/chili-chip/vgc-zero-hardware/releases/tag/v1.1.4).
 
 {{< figure
-    src="v1-2-0-top.jpg"
-    alt="Render of the front of the v1.2.0 main board"
-    caption="v1.2.0 main board, front (render, routing in progress)"
+    src="v1-1-4-schematic.png"
+    alt="Schematic of the v1.1.4 board"
+    caption="v1.1.4 schematic"
     >}}
 
 {{< figure
-    src="v1-2-0-bottom.jpg"
-    alt="Render of the back of the v1.2.0 main board with spots for the MCU and audio module"
-    caption="v1.2.0 main board, back: brain (MCU1) and audio module (AUDIO1) spots"
+    src="v1-1-4-render-top.jpg"
+    alt="KiCad render of the front of the v1.1.4 board"
+    caption="v1.1.4 board, front (KiCad render)"
     >}}
 
 {{< figure
-    src="v1-2-0-schematic.png"
-    alt="Schematic of the v1.2.0 main board"
-    caption="v1.2.0 main board schematic"
-    >}}
-
-The audio module is a tiny board with the MAX98357A amplifier and a 2-pin speaker connector ([chili-audio-module-hardware](https://github.com/chili-chip/chili-audio-module-hardware)).
-
-{{< figure
-    src="audio-module.jpg"
-    alt="Render of the audio module with the MAX98357A amplifier"
-    caption="Audio module (render)"
-    >}}
-
-{{< figure
-    src="audio-module-schematic.png"
-    alt="Schematic of the audio module"
-    caption="Audio module schematic"
+    src="v1-1-4-render-bottom.jpg"
+    alt="KiCad render of the back of the v1.1.4 board"
+    caption="v1.1.4 board, back (KiCad render)"
     >}}
 
 First public hardware target: **2027**.
@@ -132,9 +108,9 @@ We’re fully **open hardware + open source**:
 - Bootloader, firmware, SDK, tools, sample games: open repo with documented changes.
 
 {{< figure
-    src="featured.jpg"
-    alt="PCB wireframe"
-    caption="Wireframe of the chilichip console PCB (not final hardware)"
+    src="archive-wireframe.jpg"
+    alt="Wireframe of an early, much older PCB design"
+    caption="From the archives: a wireframe of a much older board design"
     >}}
 
 ### What’s Coming Next
@@ -165,7 +141,7 @@ These are the planned specs for the final chilichip console, not the current pro
 | CPU       | RP2350 @ 150MHz |
 | RAM       | 520KB on-chip + 16MB PSRAM |
 | Storage   | 16MB Flash |
-| Display   | 128×128 colour OLED |
+| Display   | 128×128 color TFT IPS |
 | Audio     | Mono speaker, 3.5mm jack, Bluetooth audio |
 | Battery   | Target up to ~9 hours |
 | Controls  | D‑Pad, A, B, START, MENU, 2 shoulders, rotary encoder |
