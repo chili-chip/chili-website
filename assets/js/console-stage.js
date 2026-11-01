@@ -7,8 +7,11 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 const MODEL_URL = '/models/vgc-zero.glb';
-const SCREEN_FRAME_URLS = ['/models/console-screen-0.png', '/models/console-screen-1.png'];
-const SCREEN_FRAME_MS = 400;
+/** Space Fighters TURBO gameplay: 150 frames of 128x128 in a 15 column sprite sheet. */
+const SCREEN_SHEET_URL = '/models/console-screen.png';
+const SCREEN_FRAME_SIZE = 128;
+const SCREEN_FRAME_COUNT = 150;
+const SCREEN_FRAME_MS = 70;
 /** Longest axis after normalize. */
 const TARGET_SIZE = 5.5;
 /** The hero card is 4:3, not the platform's tall column, so the camera sits closer. */
@@ -271,10 +274,12 @@ function createScreenOverlay(mesh, texture) {
 }
 
 async function loadScreenTexture() {
-  const images = await Promise.all(SCREEN_FRAME_URLS.map(loadImage));
+  const sheet = await loadImage(SCREEN_SHEET_URL);
+  const columns = Math.floor(sheet.naturalWidth / SCREEN_FRAME_SIZE);
+  const size = SCREEN_FRAME_SIZE;
   const canvas = document.createElement('canvas');
-  canvas.width = images[0]?.naturalWidth || 512;
-  canvas.height = images[0]?.naturalHeight || 512;
+  canvas.width = size;
+  canvas.height = size;
   const context = canvas.getContext('2d');
   if (!context) {
     throw new Error('Screen canvas unavailable');
@@ -283,7 +288,9 @@ async function loadScreenTexture() {
 
   let frame = 0;
   const draw = () => {
-    context.drawImage(images[frame], 0, 0, canvas.width, canvas.height);
+    const x = (frame % columns) * size;
+    const y = Math.floor(frame / columns) * size;
+    context.drawImage(sheet, x, y, size, size, 0, 0, size, size);
   };
   draw();
 
@@ -297,7 +304,7 @@ async function loadScreenTexture() {
   texture.needsUpdate = true;
 
   window.setInterval(() => {
-    frame = (frame + 1) % images.length;
+    frame = (frame + 1) % SCREEN_FRAME_COUNT;
     draw();
     texture.needsUpdate = true;
   }, SCREEN_FRAME_MS);
