@@ -1,3 +1,23 @@
+# The Game SDK docs moved to sdk.chilichip.eu (chili-chip/32blit-sdk, docs/).
+
+/docs/game-sdk/quickstart/linux-quickstart https://sdk.chilichip.eu/getting-started/install/ 301
+/docs/game-sdk/quickstart/linux-quickstart/ https://sdk.chilichip.eu/getting-started/install/ 301
+/docs/game-sdk/quickstart https://sdk.chilichip.eu/getting-started/ 301
+/docs/game-sdk/quickstart/ https://sdk.chilichip.eu/getting-started/ 301
+/docs/game-sdk/api/basics https://sdk.chilichip.eu/api/engine/ 301
+/docs/game-sdk/api/basics/ https://sdk.chilichip.eu/api/engine/ 301
+/docs/game-sdk/api/graphics_shapes https://sdk.chilichip.eu/api/surface/ 301
+/docs/game-sdk/api/graphics_shapes/ https://sdk.chilichip.eu/api/surface/ 301
+/docs/game-sdk/api/graphics_sprites https://sdk.chilichip.eu/api/sprites/ 301
+/docs/game-sdk/api/graphics_sprites/ https://sdk.chilichip.eu/api/sprites/ 301
+/docs/game-sdk/api/graphics_text https://sdk.chilichip.eu/api/text/ 301
+/docs/game-sdk/api/graphics_text/ https://sdk.chilichip.eu/api/text/ 301
+/docs/game-sdk/api https://sdk.chilichip.eu/api/ 301
+/docs/game-sdk/api/ https://sdk.chilichip.eu/api/ 301
+/docs/game-sdk https://sdk.chilichip.eu/ 301
+/docs/game-sdk/ https://sdk.chilichip.eu/ 301
+/docs/game-sdk/* https://sdk.chilichip.eu/ 301
+
 # The Bitsy docs moved to the Chili Creator docs (chili-chip/chili-creator, docs/).
 # Cloudflare Pages reads this file; the first matching rule wins, so the catch-all is last.
 

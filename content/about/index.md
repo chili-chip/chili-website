@@ -21,7 +21,7 @@ Everything we make is open source. The code, the boards and the docs are all on 
 | --- | --- |
 | The chilichip console and its prototypes | [Console docs](/docs/vgc-zero/) |
 | Games for the console | [Games](/games/) |
-| Making your own games | [Game SDK docs](/docs/game-sdk/), [Chili Creator docs](https://creator.chilichip.eu/) |
+| Making your own games | [Game SDK docs](https://sdk.chilichip.eu/), [Chili Creator docs](https://creator.chilichip.eu/) |
 | News and dev logs | [Blog](/posts/) |
 | Chat with us | [Discord](https://discord.gg/xB9sPYKBZc) |
 | Photos and news | [Instagram](https://www.instagram.com/chilichipelectronics/) |

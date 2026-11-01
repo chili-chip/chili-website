@@ -16,7 +16,7 @@ weight = 3
 
 [[main]]
 name = "game sdk"
-pageRef = "docs/game-sdk"
+url = "https://sdk.chilichip.eu/"
 parent = "docs"
 
 [[main]]
@@ -28,6 +28,11 @@ parent = "docs"
 [[main]]
 name = "creator"
 url = "https://creator.chilichip.eu/"
+parent = "docs"
+
+[[main]]
+name = "cli"
+url = "https://cli.chilichip.eu/"
 parent = "docs"
 
 [[main]]

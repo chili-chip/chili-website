@@ -57,7 +57,7 @@ products:
       tag: "Developers"
       icon: "code"
       text: "For coders: a C++ SDK based on 32blit, a room editor and docs that take you from an idea to a game on the console."
-      url: "/docs/game-sdk/"
+      url: "https://sdk.chilichip.eu/"
       linkLabel: "Read the docs"
 
 steps:
@@ -65,7 +65,7 @@ steps:
   items:
     - name: "Make"
       text: "Draw rooms and sprites in the Chili Creator, write a Bitsy story, or code with the Game SDK."
-      url: "https://creator.chilichip.eu/tutorial/"
+      url: "https://creator.chilichip.eu/editors/bitsy/tutorial/"
       linkLabel: "Start with Bitsy"
     - name: "Play"
       text: "Every game runs in the browser, on your phone with touch controls, and natively on the chilichip console."
