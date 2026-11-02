@@ -1,7 +1,7 @@
 ---
 title: "Chili Beat: make a game with rule cards"
 date: 2026-10-31
-draft: true
+draft: false
 description: "Chili Beat is a new kind of game in the Chili Creator. Things bump, move and change on the beat, and rules are cards you build from pictures."
 tags: ["chili-beat", "creator", "games", "vgc-zero"]
 authors: ["kacper"]
