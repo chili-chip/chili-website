@@ -11,7 +11,7 @@ tags: ["game", "arcade", "runner"]
 Run, dodge, grab chilis, catch fire.
 {{< /lead >}}
 
-{{< game-iframe url="https://chili-chip.github.io/chili-rush/" width="600" height="600" title="Chili Rush" >}}
+{{< game-iframe url="https://rush-game.chilichip.eu/" width="600" height="600" title="Chili Rush" >}}
 
 ### How to play
 
