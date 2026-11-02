@@ -19,7 +19,7 @@ Lay roads, zone land, watch it grow.
 - Move the cursor with the **arrow keys**. The map is 64×64 tiles and scrolls when the cursor reaches the edge of the screen. **MINIMAP** in the pause menu shows the whole city.
 - Every new map has its own river, lakes and forests. A road built on water becomes a bridge, and bulldozing trees clears the land.
 - Press **Z** (A) to build, or hold it and move to paint roads, zones and power lines. Tap **X** (B) for the next tool, or hold it for the tool bar.
-- Zones grow only when they touch a road and have power. Build a **power plant** and connect it with power lines. Homes need jobs, shops need shoppers, and factories need workers, but factories also pollute.
+- Zones grow only when they touch a road and have power. Build a **power plant** and connect it with power lines; a line built on a road carries power across it. Homes need jobs, shops need shoppers, and factories need workers, but factories also pollute.
 - Bigger buildings need water from a **pump** next to a lake or the river. Schools make homes grow faster, and homes reach the top level only near a hospital. Both unlock as the city grows.
 - Fire stations, police and parks keep the city healthy. Fires, tornadoes, floods and earthquakes can strike. You can turn disasters off in the pause menu.
 - Every month you collect taxes and pay upkeep. Set the tax rate on the **BUDGET** screen, and press **V** (Y) for the city stats. Press **C** (X) to see the pollution, land value, crime and water overlays.
