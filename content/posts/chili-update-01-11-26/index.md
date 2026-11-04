@@ -1,7 +1,7 @@
 ---
 title: "chilichip is going places!"
 date: 2026-11-01
-draft: true
+draft: false
 description: "Chilichip development is going forvard! We now have a shell and fully-enjoyable prototype."
 tags: ["chilichip-brand", "vgc-zero", "console", "console-shell"]
 authors: ["Eliza"]
