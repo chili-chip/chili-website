@@ -17,7 +17,7 @@ The lighthouse went dark at 22:40. The keeper is gone. You have one night.
 
 - You are Szary, the only policeman in Wydma, a small Baltic seaside town in November. Walk the dunes, the lighthouse, the bar, the harbour and an old bunker.
 - Stand at something and press **Z** (A) to look, talk, go in or out.
-- **V** (Y) switches the torch on and off. The night is dark: the torch shows what you would miss.
+- **V** (Y) switches the torch on and off. The night is dark: the torch shows what you would miss. Where a spot needs light, the game says so.
 - Watch the grass. It bends with the wind, but grass that someone stepped on lies **against** it.
 - **C** (X) opens the notebook. Szary writes every clue down himself, you never type. Pick two clues to put them together into a conclusion. Next to a person, show them a clue: some change their story.
 - The notebook also lists the open questions, the people you met and a map of the places you know.
