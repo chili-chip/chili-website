@@ -63,3 +63,8 @@
 /docs/bitsy/tools/tune/ https://creator.chilichip.eu/tools/tunes/ 301
 /docs/bitsy https://creator.chilichip.eu/ 301
 /docs/bitsy/* https://creator.chilichip.eu/ 301
+
+# The Chili Room Editor is deprecated; its announcement post was removed.
+
+/posts/map-editor /posts/ 301
+/posts/map-editor/ /posts/ 301

@@ -56,7 +56,7 @@ products:
     - name: "Game SDK"
       tag: "Developers"
       icon: "code"
-      text: "For coders: a C++ SDK based on 32blit, a room editor and docs that take you from an idea to a game on the console."
+      text: "For coders: a C++ SDK based on 32blit and docs that take you from an idea to a game on the console."
       url: "https://sdk.chilichip.eu/"
       linkLabel: "Read the docs"
 
