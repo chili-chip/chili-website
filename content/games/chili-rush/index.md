@@ -5,6 +5,7 @@ draft: false
 description: "A fast pseudo-3D endless runner for the chilichip console"
 summary: "Switch lanes, jump, slide and set yourself on fire. A fast endless runner for the chilichip console"
 tags: ["game", "arcade", "runner"]
+authors: ["pawel"]
 ---
 
 {{< lead >}}

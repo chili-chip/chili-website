@@ -5,6 +5,7 @@ draft: false
 description: "A short grey ASCII noir on the windy Baltic dunes for the chilichip console"
 summary: "One night, a dark lighthouse and grass that remembers who walked through it. A short detective story in grey ASCII"
 tags: ["game", "detective", "story", "ascii"]
+authors: ["pawel"]
 ---
 
 {{< lead >}}

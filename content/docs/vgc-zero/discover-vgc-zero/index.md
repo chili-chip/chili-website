@@ -5,6 +5,7 @@ lastmod: 2026-10-30
 draft: false
 description: "The chilichip console is a tiny open hardware & open source handheld (targeting 2027) built for playing and making games—right from your keychain."
 tags: ["vgc-zero", "console", "keychain", "portable", "gaming", "open-source"]
+authors: ["kacper"]
 ---
 
 # chilichip console: the ultra-portable keychain game console

@@ -1,11 +1,6 @@
 ---
 title: "Paweł Frankowski"
-# Hidden until Paweł has a post: no page, no sitemap/list entry.
-# Remove this block once a post sets authors: ["pawel"].
-# https://gohugo.io/content-management/build-options/
-build:
-  render: never
-  list: never
+description: "Posts and games by Paweł Frankowski"
 ---
 
-Posts by Paweł.
+Paweł is the cloud engineer and software lead at chilichip. These are his posts and games.

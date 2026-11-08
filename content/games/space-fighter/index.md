@@ -6,6 +6,7 @@ draft: false
 description: "Ultra Hyper Space Super Fighters TURBO, an arcade shooter for the chilichip console with bosses, power-ups and a chiptune soundtrack"
 summary: "Ultra Hyper Space Super Fighters TURBO: stop the alien invasion"
 tags: ["game", "arcade", "shooter"]
+authors: ["kacper"]
 ---
 
 {{< lead >}}

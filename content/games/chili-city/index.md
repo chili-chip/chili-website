@@ -5,6 +5,7 @@ draft: false
 description: "A tiny SimCity-like city builder for the chilichip console"
 summary: "Lay roads, zone land and watch your city grow. A tiny city builder for the chilichip console"
 tags: ["game", "simulation", "city builder"]
+authors: ["pawel"]
 ---
 
 {{< lead >}}
