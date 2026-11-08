@@ -49,9 +49,9 @@ To get started quickly, you can download pre-compiled games for the chilichip co
 
 ### Self-Development
 To develop your own games for the chilichip console, follow these steps:
-1. **Set Up the Development Environment**: Follow the instructions in the chilichip's 32blit SDK repository to set up your development environment. [32blit SDK](https://github.com/chili-chip/32blit-sdk)
+1. **Set Up the Development Environment**: Follow [Install the tools](https://sdk.chilichip.eu/getting-started/install/) in the [console SDK docs](https://sdk.chilichip.eu/).
 2. **Create a New Project**: Use the game template to create a new repository for your game. [Game Template](https://github.com/chili-chip/game-template)
-3. **Write Your Game Code**: Implement your game logic using C++ and the 32blit SDK APIs.
+3. **Write Your Game Code**: Implement your game logic using C++ and the [console SDK](https://sdk.chilichip.eu/api/) APIs. The [game SDK](https://game-sdk.chilichip.eu/) adds menus, scenes, saves and music.
 4. **Build the game with CMake**: Use CMake to compile your game into a UF2 file.
 5. **Flash the Game**: Connect your Raspberry Pi Pico 2 W in bootloader mode and copy the UF2 file to the device.
 6. **Test and Iterate**: Run your game on the chilichip console breadboard prototype and make adjustments as needed.

@@ -119,7 +119,6 @@ We’re fully **open hardware + open source**:
 Rolling out soon:
 - Hardware pinout & electrical notes
 - Firmware architecture overview
-- SDK & API reference
 - Game packaging / distribution workflow
 - Contribution & hacking guides
 
@@ -173,7 +172,7 @@ Automated CI:
     - MacOS
 
 
-Based on a **fork of the 32blit SDK** with:
+The [console SDK](https://sdk.chilichip.eu/) is a **fork of the 32blit SDK** with:
 - RP2350 hardware bring‑up & memory layout changes
 - 128×128 display timings + driver tweaks
 - Rotary encoder input layer

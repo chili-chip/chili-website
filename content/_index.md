@@ -53,10 +53,10 @@ products:
       text: "The console's home screen. Drag and drop games onto it, pause any game and keep your saves."
       url: "/posts/chilichip-os/"
       linkLabel: "See what's inside"
-    - name: "Game SDK"
+    - name: "Console SDK"
       tag: "Developers"
       icon: "code"
-      text: "For coders: a C++ SDK based on 32blit and docs that take you from an idea to a game on the console."
+      text: "For coders: a C++ SDK based on 32blit and docs that take you from an idea to a game on the console. The game SDK adds menus, scenes, saves and music on top."
       url: "https://sdk.chilichip.eu/"
       linkLabel: "Read the docs"
 
@@ -64,7 +64,7 @@ steps:
   title: "From idea to your pocket"
   items:
     - name: "Make"
-      text: "Draw rooms and sprites in the Chili Creator, write a Bitsy story, or code with the Game SDK."
+      text: "Draw rooms and sprites in the Chili Creator, write a Bitsy story, or code with the console SDK."
       url: "https://creator.chilichip.eu/editors/bitsy/tutorial/"
       linkLabel: "Start with Bitsy"
     - name: "Play"

@@ -15,8 +15,13 @@ pageRef = "docs"
 weight = 3
 
 [[main]]
-name = "game sdk"
+name = "console sdk"
 url = "https://sdk.chilichip.eu/"
+parent = "docs"
+
+[[main]]
+name = "game sdk"
+url = "https://game-sdk.chilichip.eu/"
 parent = "docs"
 
 [[main]]
