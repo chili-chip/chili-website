@@ -21,7 +21,7 @@ Everything we make is open source. The code, the boards and the docs are all on 
 | --- | --- |
 | The chilichip console and its prototypes | [Console docs](/docs/vgc-zero/) |
 | Games for the console | [Games](/games/) |
-| Making your own games | [Game SDK docs](https://sdk.chilichip.eu/), [Chili Creator docs](https://creator.chilichip.eu/) |
+| Making your own games | [Console SDK docs](https://sdk.chilichip.eu/), [game SDK docs](https://game-sdk.chilichip.eu/), [Chili Creator docs](https://creator.chilichip.eu/) |
 | News and dev logs | [Blog](/posts/) |
 | Chat with us | [Discord](https://discord.gg/xB9sPYKBZc) |
 | Photos and news | [Instagram](https://www.instagram.com/chilichipelectronics/) |
@@ -30,7 +30,7 @@ Everything we make is open source. The code, the boards and the docs are all on 
 
 {{< team >}}
 {{< team-member name="Kacper Akdağ-Ochnik" role="Founder and head engineer" github="https://github.com/TeriyakiGod" image="img/authors/kacper.jpg" >}}
-Kacper started chilichip and builds it from the hardware up. He designs the console boards, writes the Game SDK and the firmware, and makes the retro games that run on chilichip. He also works on the chili platform and on citsy, our Bitsy game engine.
+Kacper started chilichip and builds it from the hardware up. He designs the console boards, writes the console SDK, the game SDK and the firmware, and makes the retro games that run on chilichip. He also works on the chili platform and on citsy, our Bitsy game engine.
 {{< /team-member >}}
 {{< team-member name="Paweł Frankowski" role="Cloud engineer and software lead" github="https://github.com/pablolambo" >}}
 Paweł leads the software side. He keeps the chili platform running in the cloud: the backend, the marketplace and the store. He reviews most of the code that ships, across the platform, the creator and this website. When something breaks at night, Paweł is usually the one who already knows why.
