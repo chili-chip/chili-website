@@ -29,7 +29,7 @@ Everything we make is open source. The code, the boards and the docs are all on 
 ## The team
 
 {{< team >}}
-{{< team-member name="Kacper Akdağ-Ochnik" role="Founder and head engineer" github="https://github.com/TeriyakiGod" >}}
+{{< team-member name="Kacper Akdağ-Ochnik" role="Founder and head engineer" github="https://github.com/TeriyakiGod" image="img/authors/kacper.jpg" >}}
 Kacper started chilichip and builds it from the hardware up. He designs the console boards, writes the Game SDK and the firmware, and makes the retro games that run on chilichip. He also works on the chili platform and on citsy, our Bitsy game engine.
 {{< /team-member >}}
 {{< team-member name="Paweł Frankowski" role="Cloud engineer and software lead" github="https://github.com/pablolambo" >}}

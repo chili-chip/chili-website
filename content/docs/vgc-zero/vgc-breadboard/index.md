@@ -5,6 +5,7 @@ draft: false
 description: "Showcasing the breadboard prototype of the chilichip console, our ultra-portable keychain video game console."
 summary: "Build your own chilichip console breadboard prototype with our open-source design files and step-by-step instructions today!"
 tags: ["vgc-zero", "breadboard", "prototype", "hardware", "open-source"]
+authors: ["kacper"]
 ---
 Build your own chilichip console breadboard prototype with our open-source design files and step-by-step instructions today!
 

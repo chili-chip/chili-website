@@ -6,6 +6,7 @@ draft: false
 description: "The classic logic puzzle for the chilichip console, with four levels, best times and an original soundtrack"
 summary: "Flag the mines, clear the board, beat your best time. Classic Minesweeper for the chilichip console"
 tags: ["game", "logic", "puzzle"]
+authors: ["kacper"]
 ---
 
 {{< lead >}}

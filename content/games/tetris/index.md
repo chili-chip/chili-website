@@ -6,6 +6,7 @@ draft: false
 description: "Polished falling-block puzzler for the chilichip console, with hold, ghost piece, high scores and a chiptune soundtrack"
 summary: "Stack, clear, repeat. Polished Tetris with a chili twist for the chilichip console"
 tags: ["game", "puzzle", "arcade"]
+authors: ["kacper"]
 ---
 
 {{< lead >}}

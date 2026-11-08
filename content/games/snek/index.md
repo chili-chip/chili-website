@@ -6,6 +6,7 @@ draft: false
 description: "Polished snake for the chilichip console, with a soundtrack, high scores and golden apples"
 summary: "Eat them apples! Polished snake for the chilichip console"
 tags: ["game", "arcade", "snake"]
+authors: ["kacper"]
 ---
 
 {{< lead >}}

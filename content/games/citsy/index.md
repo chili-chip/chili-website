@@ -5,6 +5,7 @@ draft: false
 description: "Bitsy player for the chilichip console"
 summary: "A native Bitsy player with a 128×128 retro launcher. Author games at bitsy.org, export a .bitsy file, and play on the chilichip console, 32blit, desktop, or the web."
 tags: ["game", "bitsy", "vgc-zero", "adventure", "citsy"]
+authors: ["kacper"]
 ---
 
 {{< lead >}}
