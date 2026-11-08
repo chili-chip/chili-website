@@ -44,7 +44,7 @@ jobs:
 
       # three.js for the 3D console on the landing page (bundled by Hugo's js.Build)
       - name: Node setup
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
