@@ -107,6 +107,12 @@ $ chilichip delete "Doom Fire"
 
 Deleting a game keeps its saves, so installing it again brings your progress back.
 
+{{< figure
+  src="tui-console.png"
+  alt="The Console tab of the chilichip TUI with the installed games and the Install, Launch, Delete and Refresh buttons"
+  caption="The Console tab does the same with a few clicks"
+>}}
+
 ## From nothing to a game on the console
 
 Three commands take you from an empty folder to your own game running on the console:
