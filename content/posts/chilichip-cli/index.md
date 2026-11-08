@@ -7,13 +7,7 @@ tags: ["chilichip-cli", "tools", "console", "game-sdk"]
 authors: ["kacper"]
 ---
 
-Say hello to the **chilichip CLI**! It is one command for everything you do with a chilichip console from your computer. Update the firmware, install games, start a new game and play it. Run it with no arguments and you get a terminal app with menus for the same jobs.
-
-{{< figure
-  src="featured.png"
-  alt="The chilichip TUI showing a connected console and its installed games: ChiliChip OS, Bitsy, Doom Fire and Chili Snake"
-  caption="Run `chilichip` with no command to open the TUI"
->}}
+Say hello to the **chilichip CLI**! It is one command for everything you do with a chilichip console from your computer. Update the firmware, install games, start a new game and play it. Run it with no arguments and you get a terminal app (TUI) with menus for the same jobs, like the Console tab above.
 
 ## What it does
 
@@ -77,7 +71,7 @@ Already up to date? It says so and stops. Got a brand new or broken console? `ch
 
 {{< figure
   src="tui-update.png"
-  alt="The Update tab of the chilichip TUI listing what an update changes"
+  alt="The Update tab of the chilichip TUI with the Check for updates and Update now buttons"
   caption="The same update from the TUI"
 >}}
 
@@ -146,7 +140,7 @@ Missing a tool? `chilichip doctor` checks CMake, the compilers, the SDKs and the
 $ chilichip doctor
 ok  CMake          /usr/bin/cmake
 ok  C++ compiler   /usr/bin/g++
-no  Arm toolchain  sudo apt install gcc-arm-none-eabi ...
+no  Arm toolchain  sudo apt install gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
 ok  32blit-sdk     /home/ada/projects/32blit-sdk
 ok  Console        /dev/ttyACM0
 ```
