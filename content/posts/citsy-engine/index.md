@@ -9,7 +9,7 @@ authors: ["kacper"]
 
 🚀 Today we’re launching **citsy** — a native C++ runtime for [Bitsy](https://bitsy.org) games, built for the [chilichip console](/docs/vgc-zero/discover-vgc-zero/).
 
-Bitsy is the little engine for little games, worlds, and stories. Its rooms are 16×16 tiles of 8×8 pixels. That is **exactly** 128×128 — the same resolution as the console’s screen, and the same room size as the [Chili Room Editor](/posts/map-editor/). No scaling tricks. One pixel on the editor is one pixel on the handheld.
+Bitsy is the little engine for little games, worlds, and stories. Its rooms are 16×16 tiles of 8×8 pixels. That is **exactly** 128×128 — the same resolution as the console’s screen. No scaling tricks. One pixel in Bitsy is one pixel on the handheld.
 
 {{< figure
   src="launcher.png"
