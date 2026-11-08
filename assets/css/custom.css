@@ -217,6 +217,11 @@ img.logo {
   background: linear-gradient(135deg, rgb(var(--color-secondary-500)), rgb(var(--color-primary-500)));
 }
 
+img.cc-avatar {
+  margin: 0;
+  object-fit: cover;
+}
+
 .cc-member h3 {
   margin: 0;
   font-size: 1.15rem;

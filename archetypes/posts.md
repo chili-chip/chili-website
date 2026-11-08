@@ -4,6 +4,6 @@ date: {{ .Date }}
 draft: true
 description: ""
 tags: []
-# Author ids from data/authors/ (file name without .json), e.g. ["kacper"].
-authors: []
+# Author ids from data/authors/ (file name without .json). Every post needs one.
+authors: ["kacper"]
 ---

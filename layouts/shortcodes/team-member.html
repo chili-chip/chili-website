@@ -1,10 +1,14 @@
-{{- /* {{< team-member name="…" role="…" github="https://…" >}}Short bio in Markdown.{{< /team-member >}} */ -}}
+{{- /* {{< team-member name="…" role="…" github="https://…" image="img/authors/<id>.jpg" >}}Short bio in Markdown.{{< /team-member >}} */ -}}
 {{- $name := .Get "name" -}}
 {{- $initials := slice -}}
 {{- range first 2 (split $name " ") }}{{ $initials = $initials | append (substr . 0 1) }}{{ end -}}
 <article class="cc-card cc-member">
   <div class="cc-member-head">
+    {{- with .Get "image" | resources.Get }}
+    <img class="cc-avatar" src="{{ (.Fill "104x104 Center q85").RelPermalink }}" width="52" height="52" alt="" loading="lazy">
+    {{- else }}
     <span class="cc-avatar" aria-hidden="true">{{ delimit $initials "" }}</span>
+    {{- end }}
     <div>
       <h3>{{ $name }}</h3>
       {{ with .Get "role" }}<p class="cc-member-role">{{ . }}</p>{{ end }}
