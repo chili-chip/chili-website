@@ -6,7 +6,7 @@ Source of [chilichip.eu](https://chilichip.eu): the blog, the docs and the game 
 
 - **Hugo extended 0.167.0.** CI builds with 0.167.0 (`.github/workflows/pages.yml`). The lower bound comes from `config/_default/module.toml` (`min = "0.167.0"`), the upper bound from the pinned Blowfish theme v3.9.0 (`max = "0.167.0"` in `themes/blowfish/config.toml`); outside that range Hugo warns that the theme is not compatible. Newer Hugo releases build the site too, but wait for a Blowfish release that supports them before moving CI. Get it from the [Hugo releases page](https://github.com/gohugoio/hugo/releases) (`hugo_extended_0.167.0_*`), or see [Install Hugo](https://gohugo.io/installation/). Check with `hugo version`: the output must contain `+extended`.
 - **Git**, to fetch the theme submodule.
-- **Node.js with npm.** `npm ci` installs three.js, which Hugo bundles into the 3D console on the landing page (`assets/js/console-stage.js`). Without it the build fails.
+- **Node.js 26 with npm 12** (as CI: `npm install --global npm@12`; CI takes the exact version from `.github/npm/package-lock.json`, which Dependabot keeps current). `npm ci` installs three.js, which Hugo bundles into the 3D console on the landing page (`assets/js/console-stage.js`). Without it the build fails.
 
 ## Run locally
 
