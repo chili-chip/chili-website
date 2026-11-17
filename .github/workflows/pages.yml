@@ -26,13 +26,6 @@ defaults:
   run:
     shell: bash
 
-# npm 12 blocks dependency install scripts unless package.json's allowScripts
-# permits them, and no Node LTS ships it yet (Node 26 has npm 11), so the build
-# installs this exact version (chili-platform #199).
-# https://github.com/npm/cli/blob/latest/CHANGELOG.md
-env:
-  NPM_VERSION: "12.2.2"
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -58,8 +51,10 @@ jobs:
           node-version: "26"
           cache: npm
 
-      - name: npm ${{ env.NPM_VERSION }}
-        run: npm install --global npm@${{ env.NPM_VERSION }} --ignore-scripts
+      - name: npm 12 from .github/npm (lockfile, updated by Dependabot)
+        run: |
+          npm ci --prefix .github/npm --ignore-scripts --no-audit --no-fund
+          echo "$PWD/.github/npm/node_modules/.bin" >> "$GITHUB_PATH"
 
       - name: Install npm dependencies
         run: npm ci
