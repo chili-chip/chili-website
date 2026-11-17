@@ -26,6 +26,13 @@ defaults:
   run:
     shell: bash
 
+# npm 12 blocks dependency install scripts unless package.json's allowScripts
+# permits them, and no Node LTS ships it yet (Node 26 has npm 11), so the build
+# installs this exact version (chili-platform #199).
+# https://github.com/npm/cli/blob/latest/CHANGELOG.md
+env:
+  NPM_VERSION: "12.2.2"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,13 +48,18 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          persist-credentials: false  # no token left in .git/config for npm and Hugo
 
       # three.js for the 3D console on the landing page (bundled by Hugo's js.Build)
       - name: Node setup
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: 22
+          # Major only: each run takes the newest security release of the LTS.
+          node-version: "26"
           cache: npm
+
+      - name: npm ${{ env.NPM_VERSION }}
+        run: npm install --global npm@${{ env.NPM_VERSION }} --ignore-scripts
 
       - name: Install npm dependencies
         run: npm ci
