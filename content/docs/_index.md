@@ -14,12 +14,21 @@ Each project has its own docs site now. Pick the one for what you want to do.
 
 | I want to | Docs |
 | --- | --- |
+| Use the chili platform: account, store, buying and selling games, linking a console | [Platform help center](https://platform.chilichip.eu/help) |
 | Make a game without code | [Chili Creator docs](https://creator.chilichip.eu/) |
 | Code a game in C++ | [Console SDK docs](https://sdk.chilichip.eu/) |
 | Add menus, scenes, saves and music to a C++ game | [Game SDK docs](https://game-sdk.chilichip.eu/) |
 | Build, pack and flash games from the terminal | [chilichip CLI docs](https://cli.chilichip.eu/) |
 | Play Bitsy games on the console | [citsy player docs](https://citsy.chilichip.eu/docs/) |
 | Learn about the console hardware | [Console pages](/docs/vgc-zero/) |
+
+## Chili platform
+
+The [chili platform](https://platform.chilichip.eu) is where you buy hardware, buy and sell games, and keep your library. Its [help center](https://platform.chilichip.eu/help) answers questions about your account, the store, the marketplace, payouts, linking a console, and the legal texts.
+
+- [Create an account](https://platform.chilichip.eu/help/create-an-account) and [link a console](https://platform.chilichip.eu/help/link-a-console).
+- [Sell a game](https://platform.chilichip.eu/help/sell-a-game) and [get paid](https://platform.chilichip.eu/help/get-paid).
+- [Legal and policies](https://platform.chilichip.eu/help): terms, privacy, refunds and tax. These answers are still being reviewed.
 
 ## Chili Creator
 
