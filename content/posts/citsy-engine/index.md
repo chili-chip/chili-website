@@ -5,6 +5,7 @@ draft: false
 description: "A headless C++ Bitsy engine and 32blit player that run tiny adventure games natively on the chilichip console’s 128×128 display."
 tags: ["citsy", "bitsy", "vgc-zero", "32blit", "engine"]
 authors: ["kacper"]
+ai: ["text"]
 ---
 
 🚀 Today we’re launching **citsy** — a native C++ runtime for [Bitsy](https://bitsy.org) games, built for the [chilichip console](/docs/vgc-zero/discover-vgc-zero/).

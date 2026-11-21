@@ -5,6 +5,7 @@ draft: false
 description: "Update the chilichip console, install games and build your own from one command or a friendly terminal app."
 tags: ["chilichip-cli", "tools", "console", "game-sdk"]
 authors: ["kacper"]
+ai: ["text"]
 ---
 
 Say hello to the **chilichip CLI**! It is one command for everything you do with a chilichip console from your computer. Update the firmware, install games, start a new game and play it. Run it with no arguments and you get a terminal app (TUI) with menus for the same jobs, like the Console tab above.

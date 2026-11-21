@@ -5,6 +5,7 @@ draft: false
 description: "The chilichip console now turns on into ChiliChip OS: a spicy home screen, drag-and-drop games, a pause menu and saves that stick around."
 tags: ["chilichip-os", "vgc-zero", "console", "games"]
 authors: ["kacper"]
+ai: ["text"]
 ---
 
 Turn on a chilichip console and say hello to **ChiliChip OS**! Your console now has a proper home: a bold, chili-red home screen with all your games lined up and ready to play. No more one game at a time. Put as many games on it as you like and pick one whenever you want.

@@ -5,6 +5,7 @@ draft: false
 description: "We ordered ten console boards, built two working prototypes and have been playing and testing on them ever since. Here is what they look like."
 tags: ["vgc-zero", "hardware", "pcb", "prototype", "console"]
 authors: ["kacper"]
+ai: ["text"]
 ---
 
 Remember the [breadboard full of wires](/docs/vgc-zero/vgc-breadboard/) where the console started? It grew up! A couple of months ago we ordered our first batch of **ten console PCBs** and built **two working prototypes** from them. We kept quiet for a while because we were busy playing on them. Time to show them off.

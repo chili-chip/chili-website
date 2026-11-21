@@ -5,6 +5,7 @@ draft: false
 description: "A sneak peek at what comes after our first console PCBs: a tiny audio module with a real amplifier and a new modular main board."
 tags: ["vgc-zero", "hardware", "pcb", "audio", "work-in-progress"]
 authors: ["kacper"]
+ai: ["text"]
 ---
 
 Our [first console PCBs](/posts/first-pcb-prototypes/) taught us a lot. So we went back to KiCad. Here is a sneak peek at two boards we are working on right now: a tiny **audio module** and a new **main board**. Nothing here is final yet.

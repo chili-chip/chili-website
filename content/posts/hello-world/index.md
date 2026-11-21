@@ -5,6 +5,7 @@ draft: false
 description: "Meet chilichip, an indie electronics collective that makes playful, open source hardware and software."
 tags: ["hello"]
 authors: ["kacper"]
+ai: []
 summary: "Hello world! We are chilichip, an indie electronics collective. We make small, playful devices where innovation meets play."
 ---
 

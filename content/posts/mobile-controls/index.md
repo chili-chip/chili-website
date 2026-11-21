@@ -5,6 +5,7 @@ draft: false
 description: "Every game made with our SDK now runs on phones and tablets, with touch controls on the screen."
 tags: ["mobile", "web", "controls"]
 authors: ["kacper"]
+ai: []
 ---
 
 Good news: **every game made with our SDK now plays on phones and tablets**.
