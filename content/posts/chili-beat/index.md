@@ -5,6 +5,7 @@ draft: false
 description: "Chili Beat is a new kind of game in the Chili Creator. Things bump, move and change on the beat, and rules are cards you build from pictures."
 tags: ["chili-beat", "creator", "games", "vgc-zero"]
 authors: ["kacper"]
+ai: ["text"]
 ---
 
 The Chili Creator can now make two kinds of games. Next to Bitsy, there is

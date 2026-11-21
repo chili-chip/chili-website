@@ -1,0 +1,32 @@
+{{- /*
+  AI tag under a post's title (chili-website#101, decision 0006 in chili-chip/chili-business#52):
+  the front matter field `ai` lists what was made with generative AI, any of art, sound, text, code.
+  Empty or missing: no line. Same kinds and order as the AI tag on Chili Platform.
+*/ -}}
+{{- $ai := .Params.ai | default slice -}}
+{{- if and $ai (eq .Section "posts") -}}
+  {{- $order := slice "art" "sound" "text" "code" -}}
+  {{- $words := dict "art" "art" "sound" "sound and music" "text" "text" "code" "code" -}}
+  {{- $kinds := slice -}}
+  {{- range $order -}}
+    {{- if in $ai . -}}{{- $kinds = $kinds | append (index $words .) -}}{{- end -}}
+  {{- end -}}
+  {{- $unknown := complement $order $ai -}}
+  {{- if $unknown -}}
+    {{- errorf "%s: unknown ai kind %v; use art, sound, text or code" .File.Path $unknown -}}
+  {{- end -}}
+  {{- $names := slice -}}
+  {{- range .Params.authors -}}
+    {{- with index hugo.Data.authors . -}}{{- $names = $names | append (index (split .name " ") 0) -}}{{- end -}}
+  {{- end -}}
+  {{- $edited := "" -}}
+  {{- with $names -}}{{- $edited = printf ", edited by %s" (delimit . ", " " and ") -}}{{- end -}}
+  <p class="ai-use-note mt-0 mb-6 text-sm text-neutral-500 dark:text-neutral-400" data-ai="{{ delimit $ai " " }}">
+    {{- if and (eq (len $kinds) 1) (in $ai "text") -}}
+      Written with AI help{{ $edited }}.
+    {{- else -}}
+      Made with AI help ({{ delimit $kinds ", " " and " }}){{ $edited }}.
+    {{- end }}
+    <a href="{{ relref . "/ai" }}">How we use AI</a>
+  </p>
+{{- end -}}

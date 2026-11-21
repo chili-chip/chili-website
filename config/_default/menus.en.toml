@@ -99,16 +99,21 @@ pageRef = "about"
 weight = 5
 
 [[footer]]
+name = "how we use ai"
+pageRef = "ai"
+weight = 6
+
+[[footer]]
 name = "chili platform"
 url = "https://platform.chilichip.eu"
-weight = 6
+weight = 7
 
 [[footer]]
 name = "contact"
 url = "mailto:chilichipelectronics@gmail.com"
-weight = 7
+weight = 8
 
 [[footer]]
 name = "rss"
 url = "/index.xml"
-weight = 8
+weight = 9

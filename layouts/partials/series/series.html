@@ -1,0 +1,13 @@
+{{- /*
+  Overrides the Blowfish partial of the same name (theme commit ebe683e), which single.html calls right
+  above a post's content. The first line adds the AI tag (chili-website#101); the rest is the theme's
+  partial unchanged. Check it again when the theme is updated.
+*/ -}}
+{{ partial "ai-use-note.html" . }}
+{{ if .Params.series }}
+  <details
+    class="mt-2 mb-5 overflow-hidden rounded-lg ms-0 ps-5"
+    {{ if .Params.seriesOpened | default (.Site.Params.article.seriesOpened | default false) }}open{{ end }}>
+    {{ partial "series/series_base.html" . }}
+  </details>
+{{ end }}
